@@ -5,7 +5,7 @@ class Weave extends Component {
   render() {
     return (
       <div className='Weave'>
-        threading
+        weave
       </div>
     );
   }

@@ -5,7 +5,7 @@ class Treadling extends Component {
   render() {
     return (
       <div className='Treadling'>
-        threading
+        treadling
       </div>
     );
   }
