@@ -11,13 +11,13 @@ class Scheme4 extends Component {
   render() {
     return (
       <div className='Scheme4'>
-        <span className='spanCell'>
-          <Threading />
-          <Weave />
+        <span className='spanRow'>
+          <span className='spanCell'><Threading /></span>
+          <span className='spanCell'><TieUp /></span>
         </span>
-        <span className='spanCell'>
-          <TieUp />
-          <Treadling />
+        <span className='spanRow'>
+          <span className='spanCell'><Weave /></span>
+          <span className='spanCell'><Treadling /></span>
         </span>
       </div>
     );
