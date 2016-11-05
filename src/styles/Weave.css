@@ -1,4 +1,6 @@
 .Weave {
-  text-align: right;
-  border: 1px blue dashed;
+  border: 1px black solid;
+  display: table;
+  float: right;
+  margin: 1px;
 }
