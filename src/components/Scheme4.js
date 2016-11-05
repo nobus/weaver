@@ -1,4 +1,10 @@
 import React, { Component } from 'react';
+
+import Threading from './Threading';
+import Weave from './Weave';
+import TieUp from './TieUp';
+import Treadling from './Treadling';
+
 import '../styles/Scheme4.css';
 
 class Scheme4 extends Component {
@@ -6,12 +12,12 @@ class Scheme4 extends Component {
     return (
       <div className='Scheme4'>
         <span>
-          <div className='Threading'>threading</div>
-          <div className='Weave'>weave</div>
+          <Threading />
+          <Weave />
         </span>
         <span>
-          <div className='TieUp'>tie-up</div>
-          <div className='Treadling'>treadling</div>
+          <TieUp />
+          <Treadling />
         </span>
       </div>
     );

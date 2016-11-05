@@ -3,26 +3,6 @@
   display: table;
 }
 
-.Threading {
-  text-align: right;
-  border: 1px green dashed;
-}
-
-.TieUp {
-  text-align: left;
-  border: 1px black dashed;
-}
-
-.Weave {
-  text-align: right;
-  border: 1px blue dashed;
-}
-
-.Treadling {
-  text-align: left;
-  border: 1px red dashed;
-}
-
 span {
   display:table-cell;
   width: 100%;
