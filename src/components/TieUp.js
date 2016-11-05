@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../styles/Threading.css';
+import '../styles/TieUp.css';
 
 class TieUp extends Component {
   render() {
