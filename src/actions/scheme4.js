@@ -1,4 +1,4 @@
-import {WEAVE_ON, WEAVE_OFF, THREADING_ON, THREADING_OFF} from '../constans';
+import {WEAVE_ON, WEAVE_OFF, THREADING_ON, THREADING_OFF} from '../constants';
 
 export function weaveOn(r, c) {
   return {type: WEAVE_ON, row: r, col: c};
