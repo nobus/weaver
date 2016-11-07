@@ -8,11 +8,10 @@ export function weaveOff(r, c) {
   return {type: WEAVE_OFF, row: r, col: c};
 }
 
-export function threadingOn(r) {
-  return {type: THREADING_ON, row: r};
+export function threadingOn(r, c) {
+  return {type: THREADING_ON, row: r, col: c};
 }
 
-
-export function threadingOff(r) {
-  return {type: THREADING_OFF, row: r};
+export function threadingOff(r, c) {
+  return {type: THREADING_OFF, row: r, col: c};
 }
