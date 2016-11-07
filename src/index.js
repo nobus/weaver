@@ -4,9 +4,11 @@ import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 
 import Scheme4 from './components/Scheme4';
+import reducer4 from './reducers/reducer4.js';
+
 import './styles/index.css';
 
-const store4 = createStore(() => {});
+const store4 = createStore(reducer4);
 
 ReactDOM.render(
   <Provider store={store4}>
