@@ -17,13 +17,21 @@ class Scheme4 extends Component {
       <div className='Scheme4'>
         <span className='spanRow'>
           <span className='spanCell'>
-            <Threading currentState={switcher4} />
+            <Threading
+              currentState={switcher4}
+              onClick={() => dispatch(threadingOn())}
+              offClick={() => dispatch(threadingOff())}
+            />
           </span>
           <span className='spanCell'><TieUp /></span>
         </span>
         <span className='spanRow'>
           <span className='spanCell'>
-            <Weave currentState={switcher4} />
+            <Weave
+              currentState={switcher4}
+              onClick={() => dispatch(weaveOn())}
+              offClick={() => dispatch(weaveOff())}
+            />
           </span>
           <span className='spanCell'><Treadling /></span>
         </span>
