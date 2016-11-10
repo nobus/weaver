@@ -6,3 +6,11 @@
 	position: relative;
   float: left;
 }
+
+.whiteWeaveElement {
+	background: white;
+}
+
+.redWeaveElement {
+	background: red;
+}
