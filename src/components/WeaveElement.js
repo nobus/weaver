@@ -4,13 +4,27 @@ import '../styles/WeaveElement.css';
 class WeaveElement extends Component {
   constructor() {
     super();
-
-    this.state = {red: false};
     this.handleClick = this.handleClick.bind(this);
   }
 
+  componentState() {
+    const row = this.props.row;
+    const col = this.props.col;
+    const weaves = this.props.currentState.weaves;
+
+    if (weaves[row]) {
+      if (weaves[row][col] === undefined || weaves[row][col] === false) {
+          return false;
+      } else {
+        return true;
+      }
+    } else {
+      return false;
+    }
+  }
+
   render() {
-    const style = this.state.red
+    const style = this.componentState()
       ? "WeaveElement redWeaveElement"
       : "WeaveElement whiteWeaveElement";
 
@@ -18,8 +32,8 @@ class WeaveElement extends Component {
   }
 
   handleClick(e) {
-    if (this.state.red) this.setState({'red': false});
-    else this.setState({'red': true});
+    if (this.componentState()) this.props.offClick(this.props.row, this.props.col);
+    else this.props.onClick(this.props.row, this.props.col);
   }
 }
 
