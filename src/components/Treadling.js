@@ -1,11 +1,44 @@
 import React, { Component } from 'react';
+
+import TreadlingElement from './TreadlingElement';
+
 import '../styles/Treadling.css';
+import '../styles/Scheme4.css';
 
 class Treadling extends Component {
   render() {
     return (
       <div className='Treadling'>
-        treadling
+        <span className='spanRow'>
+          <TreadlingElement />
+          <TreadlingElement />
+          <TreadlingElement />
+          <TreadlingElement />
+        </span>
+        <span className='spanRow'>
+          <TreadlingElement />
+          <TreadlingElement />
+          <TreadlingElement />
+          <TreadlingElement />
+        </span>
+        <span className='spanRow'>
+          <TreadlingElement />
+          <TreadlingElement />
+          <TreadlingElement />
+          <TreadlingElement />
+        </span>
+        <span className='spanRow'>
+          <TreadlingElement />
+          <TreadlingElement />
+          <TreadlingElement />
+          <TreadlingElement />
+        </span>
+        <span className='spanRow'>
+          <TreadlingElement />
+          <TreadlingElement />
+          <TreadlingElement />
+          <TreadlingElement />
+        </span>
       </div>
     );
   }

@@ -1,4 +1,6 @@
 .TieUp {
-  text-align: left;
-  border: 1px black dashed;
+  border: 1px black solid;
+  display: table;
+  float: left;
+  margin: 1px;
 }
