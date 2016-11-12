@@ -29,8 +29,8 @@ class Scheme4 extends Component {
           <span className='spanCell'>
             <Weave
               currentState={switcher4}
-              onClick={() => dispatch(weaveOn())}
-              offClick={() => dispatch(weaveOff())}
+              onClick={(row, col) => dispatch(weaveOn(row, col))}
+              offClick={(row, col) => dispatch(weaveOff(row, col))}
             />
           </span>
           <span className='spanCell'><Treadling /></span>
