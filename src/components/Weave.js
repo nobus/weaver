@@ -12,11 +12,11 @@ class Weave extends Component {
     for (let i = 0; i < 5; i++) {
       indents.push(
         <span className='spanRow' key={i}>
-          <WeaveElement currentState={currentState} onClick={onClick} offClick={offClick} />
-          <WeaveElement currentState={currentState} onClick={onClick} offClick={offClick} />
-          <WeaveElement currentState={currentState} onClick={onClick} offClick={offClick} />
-          <WeaveElement currentState={currentState} onClick={onClick} offClick={offClick} />
-          <WeaveElement currentState={currentState} onClick={onClick} offClick={offClick} />
+          <WeaveElement currentState={currentState} onClick={onClick} offClick={offClick} row={i} col={0} />
+          <WeaveElement currentState={currentState} onClick={onClick} offClick={offClick} row={i} col={1} />
+          <WeaveElement currentState={currentState} onClick={onClick} offClick={offClick} row={i} col={2} />
+          <WeaveElement currentState={currentState} onClick={onClick} offClick={offClick} row={i} col={3} />
+          <WeaveElement currentState={currentState} onClick={onClick} offClick={offClick} row={i} col={4} />
         </span>
       );
     }
