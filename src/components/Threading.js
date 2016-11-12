@@ -5,9 +5,9 @@ import '../styles/Threading.css';
 
 class Threading extends Component {
   rowNumber(n) {
-    return (this.props.currentState.weaves.length <= n)
+    return (this.props.currentState.numberOfWeaves <= n)
       ? n
-      : this.props.currentState.weaves.length
+      : this.props.currentState.numberOfWeaves
   }
 
   render() {

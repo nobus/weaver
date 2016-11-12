@@ -4,6 +4,7 @@ import {WEAVE_ON, WEAVE_OFF, THREADING_ON, THREADING_OFF} from '../constants';
 
 const initialState = {
   weaves: [],
+  numberOfWeaves: 0,
   threadings: []
 };
 
@@ -11,6 +12,7 @@ function initNewState(state) {
   return Object.assign({}, state,
     {
       weaves: [...state.weaves],
+      numberOfWeaves: state.numberOfWeaves,
       threadings: [...state.threadings]
     }
   );
@@ -22,6 +24,7 @@ function switcher4(state, action) {
   switch (action.type) {
     case WEAVE_ON:
       newState = initNewState(state);
+      newState.numberOfWeaves++;
 
       if (newState.weaves[action.row] === undefined)
         newState.weaves[action.row] = [];
@@ -30,6 +33,7 @@ function switcher4(state, action) {
       return newState;
     case WEAVE_OFF:
       newState = initNewState(state);
+      newState.numberOfWeaves--;
 
       if (newState.weaves[action.row] === undefined)
         newState.weaves[action.row] = [];
