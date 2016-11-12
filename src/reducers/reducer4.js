@@ -23,18 +23,18 @@ function switcher4(state, action) {
     case WEAVE_ON:
       newState = initNewState(state);
 
-      if (newState.weaves[action.col] === undefined)
-        newState.weaves[action.col] = [];
+      if (newState.weaves[action.row] === undefined)
+        newState.weaves[action.row] = [];
 
-      newState.weaves[action.col][action.row] = true;
+      newState.weaves[action.row][action.col] = true;
       return newState;
     case WEAVE_OFF:
       newState = initNewState(state);
 
-      if (newState.weaves[action.col] === undefined)
-        newState.weaves[action.col] = [];
+      if (newState.weaves[action.row] === undefined)
+        newState.weaves[action.row] = [];
 
-      newState.weaves[action.col][action.row] = true;
+      newState.weaves[action.row][action.col] = false;
       return newState;
     case THREADING_ON:
       newState = initNewState(state);
