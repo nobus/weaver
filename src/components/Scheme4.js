@@ -19,8 +19,8 @@ class Scheme4 extends Component {
           <span className='spanCell'>
             <Threading
               currentState={switcher4}
-              onClick={() => dispatch(threadingOn())}
-              offClick={() => dispatch(threadingOff())}
+              onClick={(row, col) => dispatch(threadingOn(row, col))}
+              offClick={(row, col) => dispatch(threadingOff(row, col))}
             />
           </span>
           <span className='spanCell'><TieUp /></span>
