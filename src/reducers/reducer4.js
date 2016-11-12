@@ -38,12 +38,12 @@ function switcher4(state, action) {
       return newState;
     case THREADING_ON:
       newState = initNewState(state);
-      newState.threadings[action.col] = action.row;
+      newState.threadings[action.row] = action.col;
 
       return newState;
     case THREADING_OFF:
       newState = initNewState(state);
-      newState.threadings[action.col] = undefined;
+      newState.threadings[action.row] = undefined;
 
       return newState;
     default:
