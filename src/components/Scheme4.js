@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import {weaveOn, weaveOff, threadingOn, threadingOff} from '../actions/scheme4';
+import {weaveOn, weaveOff, threadingOn, threadingOff} from '../actions/actions4';
 import Threading from './Threading';
 import Weave from './Weave';
 import TieUp from './TieUp';
