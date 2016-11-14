@@ -54,11 +54,11 @@ function switcher4(state, action) {
       return newState;
     case TREADLING_ON:
       newState = initNewState(state);
-      newState.threadings[action.row] = action.col;
+      newState.treadlings[action.col] = action.row;
       return newState;
     case TREADLING_OFF:
       newState = initNewState(state);
-      newState.threadings[action.row] = undefined;
+      newState.treadlings[action.col] = undefined;
       return newState;
     default:
       return initialState;
