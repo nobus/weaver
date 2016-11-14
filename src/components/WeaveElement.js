@@ -9,13 +9,12 @@ class WeaveElement extends Component {
   }
 
   componentState() {
-    const row = this.props.row;
-    const col = this.props.col;
-    const weaves = this.props.currentState.weaves;
+    const {row, col, currentState} = this.props;
 
-    if (weaves[row]) {
-      if (weaves[row][col] === undefined || weaves[row][col] === false) {
-          return false;
+    if (currentState.weaves[row]) {
+      if (currentState.weaves[row][col] === undefined
+        || currentState.weaves[row][col] === false) {
+        return false;
       } else {
         return true;
       }
