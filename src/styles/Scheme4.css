@@ -11,3 +11,7 @@
 .spanRow {
   display: table-row;
 }
+
+.whiteElement {
+	background: white;
+}
