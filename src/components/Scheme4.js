@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import {weaveOn, weaveOff, threadingOn, threadingOff} from '../actions/actions4';
+import {weaveOn, weaveOff, threadingOn, threadingOff, treadlingOn, treadlingOff} from '../actions/actions4';
 import Threading from './Threading';
 import Weave from './Weave';
 import TieUp from './TieUp';
@@ -36,8 +36,8 @@ class Scheme4 extends Component {
           <span className='spanCell'>
             <Treadling
               treadlingsState={switcher4.treadlings}
-              onClick={(row, col) => dispatch(threadingOn(row, col))}
-              offClick={(row, col) => dispatch(threadingOff(row, col))}
+              onClick={(row, col) => dispatch(treadlingOn(row, col))}
+              offClick={(row, col) => dispatch(treadlingOff(row, col))}
             />
           </span>
         </span>
