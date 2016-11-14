@@ -6,3 +6,7 @@
 	position: relative;
   float: left;
 }
+
+.blueThreadingElement {
+	background: blue;
+}
