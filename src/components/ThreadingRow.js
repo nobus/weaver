@@ -5,13 +5,23 @@ import '../styles/Scheme4.css';
 
 class ThreadingRow extends Component {
   render() {
+    const {threadingsState, onClick, offClick, row} = this.props;
+    const indents = [];
+
+    for (let i = 0; i < 5; i++) {
+      indents.push(<ThreadingElement
+        key={i}
+        threadingsState={threadingsState}
+        onClick={onClick}
+        offClick={offClick}
+        row={row}
+        col={i}
+      />);
+    }
+
     return (
         <span className='spanRow'>
-          <ThreadingElement />
-          <ThreadingElement />
-          <ThreadingElement />
-          <ThreadingElement />
-          <ThreadingElement />
+          {indents}
         </span>
     );
   }

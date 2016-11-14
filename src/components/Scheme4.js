@@ -18,7 +18,7 @@ class Scheme4 extends Component {
         <span className='spanRow'>
           <span className='spanCell'>
             <Threading
-              currentState={switcher4}
+              threadingsState={switcher4.threadings}
               onClick={(row, col) => dispatch(threadingOn(row, col))}
               offClick={(row, col) => dispatch(threadingOff(row, col))}
             />
