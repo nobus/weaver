@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import '../styles/WeaveElement.css';
+import '../styles/Scheme4.css';
 
 class WeaveElement extends Component {
   constructor() {
@@ -26,7 +27,7 @@ class WeaveElement extends Component {
   render() {
     const style = this.componentState()
       ? "WeaveElement redWeaveElement"
-      : "WeaveElement whiteWeaveElement";
+      : "WeaveElement whiteElement";
 
     return (<div onClick={this.handleClick} className={style}></div>);
   }
