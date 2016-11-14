@@ -33,7 +33,13 @@ class Scheme4 extends Component {
               offClick={(row, col) => dispatch(weaveOff(row, col))}
             />
           </span>
-          <span className='spanCell'><Treadling /></span>
+          <span className='spanCell'>
+            <Treadling
+              treadlingsState={switcher4.treadlings}
+              onClick={(row, col) => dispatch(threadingOn(row, col))}
+              offClick={(row, col) => dispatch(threadingOff(row, col))}
+            />
+          </span>
         </span>
       </div>
     );

@@ -1,44 +1,27 @@
 import React, { Component } from 'react';
 
-import TreadlingElement from './TreadlingElement';
+import TreadlingRow from './TreadlingRow';
 
 import '../styles/Treadling.css';
-import '../styles/Scheme4.css';
 
 class Treadling extends Component {
   render() {
+    const {treadlingsState, onClick, offClick} = this.props;
+    const indents = [];
+
+    for (let i = 0; i < 5; i++) {
+      indents.push(<TreadlingRow
+          key={i}
+          treadlingsState={treadlingsState}
+          onClick={onClick}
+          offClick={offClick}
+          col={i}
+        />);
+    }
+
     return (
       <div className='Treadling'>
-        <span className='spanRow'>
-          <TreadlingElement />
-          <TreadlingElement />
-          <TreadlingElement />
-          <TreadlingElement />
-        </span>
-        <span className='spanRow'>
-          <TreadlingElement />
-          <TreadlingElement />
-          <TreadlingElement />
-          <TreadlingElement />
-        </span>
-        <span className='spanRow'>
-          <TreadlingElement />
-          <TreadlingElement />
-          <TreadlingElement />
-          <TreadlingElement />
-        </span>
-        <span className='spanRow'>
-          <TreadlingElement />
-          <TreadlingElement />
-          <TreadlingElement />
-          <TreadlingElement />
-        </span>
-        <span className='spanRow'>
-          <TreadlingElement />
-          <TreadlingElement />
-          <TreadlingElement />
-          <TreadlingElement />
-        </span>
+        {indents}
       </div>
     );
   }
