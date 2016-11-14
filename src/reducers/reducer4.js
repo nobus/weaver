@@ -1,11 +1,12 @@
 import { combineReducers } from 'redux';
 
-import {WEAVE_ON, WEAVE_OFF, THREADING_ON, THREADING_OFF} from '../constants';
+import {WEAVE_ON, WEAVE_OFF, THREADING_ON, THREADING_OFF, TREADLING_ON, TREADLING_OFF} from '../constants';
 
 const initialState = {
   weaves: [],
   numberOfWeaves: 0,
-  threadings: []
+  threadings: [],
+  treadlings: []
 };
 
 function initNewState(state) {
@@ -13,7 +14,8 @@ function initNewState(state) {
     {
       weaves: [...state.weaves],
       numberOfWeaves: state.numberOfWeaves,
-      threadings: [...state.threadings]
+      threadings: [...state.threadings],
+      treadlings: [...state.treadlings]
     }
   );
 }
@@ -49,6 +51,14 @@ function switcher4(state, action) {
       newState = initNewState(state);
       newState.threadings[action.col] = undefined;
 
+      return newState;
+    case TREADLING_ON:
+      newState = initNewState(state);
+      newState.threadings[action.row] = action.col;
+      return newState;
+    case TREADLING_OFF:
+      newState = initNewState(state);
+      newState.threadings[action.row] = undefined;
       return newState;
     default:
       return initialState;
