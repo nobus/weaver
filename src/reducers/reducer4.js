@@ -46,11 +46,36 @@ function switcherWeaveOff(newState, action) {
   return newState;
 }
 
+function checkThreading(newState, row) {
+  for (let i = 0; i < newState.threadings.length; i++) {
+    if (newState.threadings[i] === row) return i;
+  }
+
+  return -1;
+}
+
+function checkTreadling(newState, col) {
+  for (let i = 0; i < newState.treadlings.length; i++) {
+    if (newState.treadlings[i] === col) return i;
+  }
+
+  return -1;
+}
+
 function switcherTieUpOn(newState, action) {
   if (newState.tieUp[action.row] === undefined)
     newState.tieUp[action.row] = [];
 
   newState.tieUp[action.row][action.col] = true;
+
+  const weaveCol = checkThreading(newState, action.row);
+  const weaveRow = checkTreadling(newState, action.col);
+
+  if (weaveRow > -1 && weaveCol > -1) {
+    if (newState.weaves[weaveRow] === undefined) newState.weaves[weaveRow] = [];
+    newState.weaves[weaveRow][weaveCol] = true;
+  }
+
   return newState;
 }
 
@@ -59,6 +84,15 @@ function switcherTieUpOff(newState, action) {
     newState.tieUp[action.row] = [];
 
   newState.tieUp[action.row][action.col] = false;
+
+  const weaveCol = checkThreading(newState, action.row);
+  const weaveRow = checkTreadling(newState, action.col);
+
+  if (weaveRow > -1 && weaveCol > -1) {
+    if (newState.weaves[weaveRow] === undefined) newState.weaves[weaveRow] = [];
+    newState.weaves[weaveRow][weaveCol] = false;
+  }
+
   return newState;
 }
 
