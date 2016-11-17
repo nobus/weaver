@@ -47,19 +47,23 @@ function switcherWeaveOff(newState, action) {
 }
 
 function checkThreading(newState, row) {
+  const ret = [];
+
   for (let i = 0; i < newState.threadings.length; i++) {
-    if (newState.threadings[i] === row) return i;
+    if (newState.threadings[i] === row) ret.push(i);
   }
 
-  return -1;
+  return ret;
 }
 
 function checkTreadling(newState, col) {
+  const ret = [];
+
   for (let i = 0; i < newState.treadlings.length; i++) {
-    if (newState.treadlings[i] === col) return i;
+    if (newState.treadlings[i] === col) ret.push(i);
   }
 
-  return -1;
+  return ret;
 }
 
 function switcherTieUpOn(newState, action) {
@@ -68,12 +72,18 @@ function switcherTieUpOn(newState, action) {
 
   newState.tieUp[action.row][action.col] = true;
 
-  const weaveCol = checkThreading(newState, action.row);
-  const weaveRow = checkTreadling(newState, action.col);
+  const weaveCols = checkThreading(newState, action.row);
+  const weaveRows = checkTreadling(newState, action.col);
 
-  if (weaveRow > -1 && weaveCol > -1) {
+  for (let r = 0; r < weaveRows.length; r++) {
+    const weaveRow = weaveRows[r];
+
     if (newState.weaves[weaveRow] === undefined) newState.weaves[weaveRow] = [];
-    newState.weaves[weaveRow][weaveCol] = true;
+
+    for (let c = 0; c < weaveCols.length; c++) {
+      const weaveCol = weaveCols[c];
+      newState.weaves[weaveRow][weaveCol] = true;
+    }
   }
 
   return newState;
@@ -85,12 +95,18 @@ function switcherTieUpOff(newState, action) {
 
   newState.tieUp[action.row][action.col] = false;
 
-  const weaveCol = checkThreading(newState, action.row);
-  const weaveRow = checkTreadling(newState, action.col);
+  const weaveCols = checkThreading(newState, action.row);
+  const weaveRows = checkTreadling(newState, action.col);
 
-  if (weaveRow > -1 && weaveCol > -1) {
+  for (let r = 0; r < weaveRows.length; r++) {
+    const weaveRow = weaveRows[r];
+
     if (newState.weaves[weaveRow] === undefined) newState.weaves[weaveRow] = [];
-    newState.weaves[weaveRow][weaveCol] = false;
+
+    for (let c = 0; c < weaveCols.length; c++) {
+      const weaveCol = weaveCols[c];
+      newState.weaves[weaveRow][weaveCol] = false;
+    }
   }
 
   return newState;
