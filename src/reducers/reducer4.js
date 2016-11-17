@@ -26,8 +26,7 @@ function initNewState(state) {
   );
 }
 
-function switcherWeaveOn(state, action) {
-  const newState = initNewState(state);
+function switcherWeaveOn(newState, action) {
   newState.numberOfWeaves++;
 
   if (newState.weaves[action.row] === undefined)
@@ -37,8 +36,7 @@ function switcherWeaveOn(state, action) {
   return newState;
 }
 
-function switcherWeaveOff(state, action) {
-  const newState = initNewState(state);
+function switcherWeaveOff(newState, action) {
   newState.numberOfWeaves--;
 
   if (newState.weaves[action.row] === undefined)
@@ -48,9 +46,7 @@ function switcherWeaveOff(state, action) {
   return newState;
 }
 
-function switcherTieUpOn(state, action) {
-  const newState = initNewState(state);
-
+function switcherTieUpOn(newState, action) {
   if (newState.tieUp[action.row] === undefined)
     newState.tieUp[action.row] = [];
 
@@ -58,9 +54,7 @@ function switcherTieUpOn(state, action) {
   return newState;
 }
 
-function switcherTieUpOff(state, action) {
-  const newState = initNewState(state);
-
+function switcherTieUpOff(newState, action) {
   if (newState.tieUp[action.row] === undefined)
     newState.tieUp[action.row] = [];
 
@@ -68,40 +62,36 @@ function switcherTieUpOff(state, action) {
   return newState;
 }
 
-function switcherThreadingOn(state, action) {
-  const newState = initNewState(state);
+function switcherThreadingOn(newState, action) {
   newState.threadings[action.col] = action.row;
   return newState;
 }
 
-function switcherThreadingOff(state, action) {
-  const newState = initNewState(state);
+function switcherThreadingOff(newState, action) {
   newState.threadings[action.col] = undefined;
   return newState;
 }
 
-function switcherTreadlingOn(state, action) {
-  const newState = initNewState(state);
+function switcherTreadlingOn(newState, action) {
   newState.treadlings[action.col] = action.row;
   return newState;
 }
 
-function switcherTreadlingOff(state, action) {
-  const newState = initNewState(state);
+function switcherTreadlingOff(newState, action) {
   newState.treadlings[action.col] = undefined;
   return newState;
 }
 
 function switcher4(state, action) {
   switch (action.type) {
-    case WEAVE_ON: return switcherWeaveOn(state, action);
-    case WEAVE_OFF: return switcherWeaveOff(state, action);
-    case TIE_UP_ON: return switcherTieUpOn(state, action);
-    case TIE_UP_OFF: return switcherTieUpOff(state, action);
-    case THREADING_ON: return switcherThreadingOn(state, action);
-    case THREADING_OFF: return switcherThreadingOff(state, action);
-    case TREADLING_ON: return switcherTreadlingOn(state, action);
-    case TREADLING_OFF: return switcherTreadlingOff(state, action);
+    case WEAVE_ON: return switcherWeaveOn(initNewState(state), action);
+    case WEAVE_OFF: return switcherWeaveOff(initNewState(state), action);
+    case TIE_UP_ON: return switcherTieUpOn(initNewState(state), action);
+    case TIE_UP_OFF: return switcherTieUpOff(initNewState(state), action);
+    case THREADING_ON: return switcherThreadingOn(initNewState(state), action);
+    case THREADING_OFF: return switcherThreadingOff(initNewState(state), action);
+    case TREADLING_ON: return switcherTreadlingOn(initNewState(state), action);
+    case TREADLING_OFF: return switcherTreadlingOff(initNewState(state), action);
     default:
       return initialState;
   }
