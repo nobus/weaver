@@ -1,7 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import {weaveOn, weaveOff, threadingOn, threadingOff, treadlingOn, treadlingOff} from '../actions/actions4';
+import {
+  weaveOn, weaveOff,
+  threadingOn, threadingOff,
+  treadlingOn, treadlingOff,
+  tieUpOn, tieUpOff
+} from '../actions/actions4';
+
 import Threading from './Threading';
 import Weave from './Weave';
 import TieUp from './TieUp';
@@ -23,7 +29,13 @@ class Scheme4 extends Component {
               offClick={(row, col) => dispatch(threadingOff(row, col))}
             />
           </span>
-          <span className='spanCell'><TieUp /></span>
+          <span className='spanCell'>
+            <TieUp
+              currentState={switcher4.tieUp}
+              onClick={(row, col) => dispatch(tieUpOn(row, col))}
+              offClick={(row, col) => dispatch(tieUpOff(row, col))}
+            />
+          </span>
         </span>
         <span className='spanRow'>
           <span className='spanCell'>
