@@ -184,6 +184,8 @@ function switcherTreadlingOn(newState, action) {
   const tieUpCols = checkTieUpCol(newState, action.row/*????*/);
 
   if (tieUpCols.length) {
+    newState.weaves[action.col] = [];
+
     for (let i = 0; i < tieUpCols.length; i++) {
       const threadingRows = checkThreading(newState, tieUpCols[i]);
 
