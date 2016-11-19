@@ -46,70 +46,11 @@ function switcherWeaveOff(newState, action) {
   return newState;
 }
 
-function checkThreading(newState, row) {
-  const ret = [];
-
-  for (let i = 0; i < newState.threadings.length; i++) {
-    if (newState.threadings[i] === row) ret.push(i);
-  }
-
-  return ret;
-}
-
-function checkTreadling(newState, col) {
-  const ret = [];
-
-  for (let i = 0; i < newState.treadlings.length; i++) {
-    if (newState.treadlings[i] === col) ret.push(i);
-  }
-
-  return ret;
-}
-
-function checkTieUpRow(newState, row) {
-  const ret = [];
-
-  if (newState.tieUp[row]) {
-    for (let i = 0; i < newState.tieUp[row].length; i++) {
-      if (newState.tieUp[row][i] === true) ret.push(i);
-    }
-  }
-
-  return ret;
-}
-
-function checkTieUpCol(newState, col) {
-  const ret = [];
-
-  for (let i = 0; i < newState.tieUp.length; i++) {
-    const tieUpRow = newState.tieUp[i];
-
-    if (tieUpRow && tieUpRow[col] === true) ret.push(i);
-  }
-
-  return ret;
-}
-
 function switcherTieUpOn(newState, action) {
   if (newState.tieUp[action.row] === undefined)
     newState.tieUp[action.row] = [];
 
   newState.tieUp[action.row][action.col] = true;
-
-  const weaveCols = checkThreading(newState, action.row);
-  const weaveRows = checkTreadling(newState, action.col);
-
-  for (let r = 0; r < weaveRows.length; r++) {
-    const weaveRow = weaveRows[r];
-
-    if (newState.weaves[weaveRow] === undefined) newState.weaves[weaveRow] = [];
-
-    for (let c = 0; c < weaveCols.length; c++) {
-      const weaveCol = weaveCols[c];
-      newState.weaves[weaveRow][weaveCol] = true;
-    }
-  }
-
   return newState;
 }
 
@@ -118,105 +59,26 @@ function switcherTieUpOff(newState, action) {
     newState.tieUp[action.row] = [];
 
   newState.tieUp[action.row][action.col] = false;
-
-  const weaveCols = checkThreading(newState, action.row);
-  const weaveRows = checkTreadling(newState, action.col);
-
-  for (let r = 0; r < weaveRows.length; r++) {
-    const weaveRow = weaveRows[r];
-
-    if (newState.weaves[weaveRow] === undefined) newState.weaves[weaveRow] = [];
-
-    for (let c = 0; c < weaveCols.length; c++) {
-      const weaveCol = weaveCols[c];
-      newState.weaves[weaveRow][weaveCol] = false;
-    }
-  }
-
   return newState;
 }
 
 function switcherThreadingOn(newState, action) {
   newState.threadings[action.col] = action.row;
-
-  const tieUpRows = checkTieUpRow(newState, action.row);
-
-  if (tieUpRows.length) {
-    for (let r = 0; r < tieUpRows.length; r++) {
-      const treadlingCols = checkTreadling(newState, tieUpRows[r]);
-
-      for (let c = 0; c < treadlingCols.length; c++) {
-        const weaveRow = treadlingCols[c];
-        if (newState.weaves[weaveRow] === undefined) newState.weaves[weaveRow] = [];
-        newState.weaves[weaveRow][action.col] = true;
-      }
-    }
-  } else {
-    for (let i = 0; i < newState.weaves.length; i++) {
-      if (newState.weaves[i]) newState.weaves[i][action.col] = false;
-    }
-  }
-
   return newState;
 }
 
 function switcherThreadingOff(newState, action) {
   newState.threadings[action.col] = undefined;
-
-  const tieUpRows = checkTieUpRow(newState, action.row);
-
-  for (let r = 0; r < tieUpRows.length; r++) {
-    const treadlingCols = checkTreadling(newState, tieUpRows[r]);
-
-    for (let c = 0; c < treadlingCols.length; c++) {
-      const weaveRow = treadlingCols[c];
-      if (newState.weaves[weaveRow] === undefined) newState.weaves[weaveRow] = [];
-      newState.weaves[weaveRow][action.col] = false;
-    }
-  }
-
   return newState;
 }
 
 function switcherTreadlingOn(newState, action) {
   newState.treadlings[action.col] = action.row;
-
-  const tieUpCols = checkTieUpCol(newState, action.row/*????*/);
-
-  if (tieUpCols.length) {
-    newState.weaves[action.col] = [];
-
-    for (let i = 0; i < tieUpCols.length; i++) {
-      const threadingRows = checkThreading(newState, tieUpCols[i]);
-
-      for (let ii = 0; ii < threadingRows.length; ii++) {
-        const weaveCol = threadingRows[ii];
-        if (newState.weaves[action.col] === undefined) newState.weaves[action.col] = [];
-        newState.weaves[action.col][weaveCol] = true;
-      }
-    }
-  } else {
-    newState.weaves[action.col] = [];
-  }
-
   return newState;
 }
 
 function switcherTreadlingOff(newState, action) {
   newState.treadlings[action.col] = undefined;
-
-  const tieUpCols = checkTieUpCol(newState, action.row/*????*/);
-
-  for (let i = 0; i < tieUpCols.length; i++) {
-    const threadingRows = checkThreading(newState, tieUpCols[i]);
-
-    for (let ii = 0; ii < threadingRows.length; ii++) {
-      const weaveCol = threadingRows[ii];
-      if (newState.weaves[action.col] === undefined) newState.weaves[action.col] = [];
-      newState.weaves[action.col][weaveCol] = false;
-    }
-  }
-
   return newState;
 }
 
@@ -230,7 +92,8 @@ function switcher4(state, action) {
     case THREADING_OFF: return switcherThreadingOff(initNewState(state), action);
     case TREADLING_ON: return switcherTreadlingOn(initNewState(state), action);
     case TREADLING_OFF: return switcherTreadlingOff(initNewState(state), action);
-    default: return initialState;
+    default:
+      return initialState;
   }
 }
 
