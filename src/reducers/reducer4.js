@@ -47,17 +47,23 @@ function switcherWeaveOff(newState, action) {
 }
 
 function checkThreading(newState, row) {
-  return newState
-    .threadings
-    .map((e, i) => {return (e === row) ? i : false})
-    .filter((e) => {return (e) ? e : undefined});
+  const ret = [];
+
+  for (let i = 0; i < newState.threadings.length; i++) {
+    if (newState.threadings[i] === row) ret.push(i);
+  }
+
+  return ret;
 }
 
 function checkTreadling(newState, col) {
-  return newState
-    .treadlings
-    .map((e, i) => {return (e === col) ? i : false})
-    .filter((e) => {return (e) ? e : undefined});
+  const ret = [];
+
+  for (let i = 0; i < newState.treadlings.length; i++) {
+    if (newState.treadlings[i] === col) ret.push(i);
+  }
+
+  return ret;
 }
 
 function checkTieUpRow(newState, row) {
