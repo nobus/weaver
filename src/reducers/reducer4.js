@@ -92,8 +92,7 @@ function switcher4(state, action) {
     case THREADING_OFF: return switcherThreadingOff(initNewState(state), action);
     case TREADLING_ON: return switcherTreadlingOn(initNewState(state), action);
     case TREADLING_OFF: return switcherTreadlingOff(initNewState(state), action);
-    default:
-      return initialState;
+    default: return initialState;
   }
 }
 
