@@ -10,7 +10,7 @@ class TieUp extends Component {
     const {currentState, onClick, offClick} = this.props;
     const indents = [];
 
-    for (let i = 0; i < 4; i++) {
+    for (let i = 4; i > 0; i--) {
       indents.push(
         <span className='spanRow' key={i}>
           <TieUpElement currentState={currentState} onClick={onClick} offClick={offClick} row={i} col={0} />

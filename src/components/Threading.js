@@ -15,7 +15,7 @@ class Threading extends Component {
     const {threadingsState, onClick, offClick} = this.props;
     const indents = [];
 
-    for (let i = 0; i < /*this.rowNumber(4)*/4; i++) {
+    for (let i = 4; i > /*this.rowNumber(4)*/0; i--) {
       indents.push(<ThreadingRow
           key={i}
           threadingsState={threadingsState}
