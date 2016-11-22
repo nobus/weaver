@@ -9,14 +9,19 @@ class Weave extends Component {
     const {currentState, onClick, offClick} = this.props;
 
     const indents = [];
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 16; i++) {
+      const rowIndents = [];
+      for (let j = 0; j < 16; j++)
+        rowIndents.push(<WeaveElement
+          currentState={currentState}
+          onClick={onClick}
+          offClick={offClick}
+          row={i} col={j}
+        />);
+
       indents.push(
         <span className='spanRow' key={i}>
-          <WeaveElement currentState={currentState} onClick={onClick} offClick={offClick} row={i} col={0} />
-          <WeaveElement currentState={currentState} onClick={onClick} offClick={offClick} row={i} col={1} />
-          <WeaveElement currentState={currentState} onClick={onClick} offClick={offClick} row={i} col={2} />
-          <WeaveElement currentState={currentState} onClick={onClick} offClick={offClick} row={i} col={3} />
-          <WeaveElement currentState={currentState} onClick={onClick} offClick={offClick} row={i} col={4} />
+          {rowIndents}
         </span>
       );
     }

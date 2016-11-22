@@ -10,13 +10,19 @@ class TieUp extends Component {
     const {currentState, onClick, offClick} = this.props;
     const indents = [];
 
-    for (let i = 4; i > 0; i--) {
+    for (let i = 8; i > 0; i--) {
+      const rowIndents = [];
+      for (let j = 0; j < 8; j++)
+        rowIndents.push(<TieUpElement
+          currentState={currentState}
+          onClick={onClick}
+          offClick={offClick}
+          row={i} col={j}
+        />);
+
       indents.push(
         <span className='spanRow' key={i}>
-          <TieUpElement currentState={currentState} onClick={onClick} offClick={offClick} row={i} col={0} />
-          <TieUpElement currentState={currentState} onClick={onClick} offClick={offClick} row={i} col={1} />
-          <TieUpElement currentState={currentState} onClick={onClick} offClick={offClick} row={i} col={2} />
-          <TieUpElement currentState={currentState} onClick={onClick} offClick={offClick} row={i} col={3} />
+          {rowIndents}
         </span>
       );
     }

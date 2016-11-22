@@ -8,7 +8,7 @@ class TreadlingRow extends Component {
     const {treadlingsState, onClick, offClick, col} = this.props;
     const indents = [];
 
-    for (let i = 0; i < 4; i++) {
+    for (let i = 0; i < 8; i++) {
       indents.push(<TreadlingElement
         key={i}
         treadlingsState={treadlingsState}
