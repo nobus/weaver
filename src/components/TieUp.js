@@ -17,7 +17,7 @@ class TieUp extends Component {
           currentState={currentState}
           onClick={onClick}
           offClick={offClick}
-          row={i} col={j}
+          row={i} col={j} key={j}
         />);
 
       indents.push(
