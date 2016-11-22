@@ -2,11 +2,10 @@
   width: 20px;
 	height: 20px;
 	border: 1px black solid;
-	margin: 1px;
 	position: relative;
   float: right;
 }
 
-.greyWeaveElement {
+.greyTieUpElement {
 	background: grey;
 }

@@ -25,7 +25,7 @@ class TieUpElement extends Component {
 
   render() {
     const style = this.componentState()
-      ? "WeaveElement greyWeaveElement"
+      ? "WeaveElement greyTieUpElement"
       : "WeaveElement whiteElement";
 
     return (<div onClick={this.handleClick} className={style}></div>);
