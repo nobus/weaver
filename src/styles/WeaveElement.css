@@ -1,11 +1,23 @@
 .WeaveElement {
   width: 20px;
 	height: 20px;
-	border: 1px black solid;
+	border: 1px gray solid;
 	position: relative;
   float: left;
 }
 
+.whiteWeaveElement {
+  border-top: 1px black solid;
+  border-bottom: 1px black solid;
+  border-left: 1px white solid;
+  border-right: 1px white solid;
+	background: white;
+}
+
 .redWeaveElement {
-	background: red;
+  border-top: 1px #bf7e7e solid;
+  border-bottom: 1px #bf7e7e solid;
+  border-left: 1px black solid;
+  border-right: 1px black solid;
+	background: #bf7e7e;
 }
