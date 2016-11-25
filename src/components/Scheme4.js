@@ -12,6 +12,7 @@ import Threading from './Threading';
 import Weave from './Weave';
 import TieUp from './TieUp';
 import Treadling from './Treadling';
+import NavBar from './NavBar';
 
 import '../styles/Scheme4.css';
 
@@ -21,6 +22,7 @@ class Scheme4 extends Component {
 
     return (
       <div className='Scheme4'>
+        <NavBar />
         <span className='spanRow'>
           <span className='spanCell'>
             <Threading
