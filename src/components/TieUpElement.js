@@ -13,7 +13,8 @@ class TieUpElement extends Component {
 
     if (currentState[row]) {
       if (currentState[row][col] === undefined
-        || currentState[row][col] === false) {
+        || currentState[row][col] === false
+        || currentState[row][col] === null) {
         return false;
       } else {
         return true;
