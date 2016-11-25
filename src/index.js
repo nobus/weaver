@@ -10,6 +10,13 @@ import './styles/index.css';
 
 const store4 = createStore(reducer4);
 
+store4.subscribe(() => {
+  localStorage.setItem(
+    'store4State',
+    JSON.stringify(store4.getState())
+  );
+});
+
 ReactDOM.render(
   <Provider store={store4}>
     <Scheme4 />

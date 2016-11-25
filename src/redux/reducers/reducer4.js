@@ -6,14 +6,6 @@ import {
   TREADLING_ON, TREADLING_OFF,
   TIE_UP_ON, TIE_UP_OFF} from '../constants';
 
-const initialState = {
-  weaves: [],
-  numberOfWeaves: 0,
-  threadings: [],
-  treadlings: [],
-  tieUp: []
-};
-
 function initNewState(state) {
   return Object.assign({}, state,
     {
@@ -82,6 +74,25 @@ function switcherTreadlingOff(newState, action) {
   return newState;
 }
 
+function initialState() {
+  const newState = {
+    weaves: [],
+    numberOfWeaves: 0,
+    threadings: [],
+    treadlings: [],
+    tieUp: []
+  };
+
+  const store4State = localStorage.getItem('store4State');
+
+  if (store4State) {
+    const persistedState = JSON.parse(store4State);
+    return persistedState.switcher4;
+  } else {
+    return newState;
+  }
+}
+
 function switcher4(state, action) {
   switch (action.type) {
     case WEAVE_ON: return switcherWeaveOn(initNewState(state), action);
@@ -92,7 +103,7 @@ function switcher4(state, action) {
     case THREADING_OFF: return switcherThreadingOff(initNewState(state), action);
     case TREADLING_ON: return switcherTreadlingOn(initNewState(state), action);
     case TREADLING_OFF: return switcherTreadlingOff(initNewState(state), action);
-    default: return initialState;
+    default: return initialState();
   }
 }
 
