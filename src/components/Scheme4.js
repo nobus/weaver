@@ -6,7 +6,7 @@ import {
   threadingOn, threadingOff,
   treadlingOn, treadlingOff,
   tieUpOn, tieUpOff
-} from '../actions/actions4';
+} from '../redux/actions/actions4';
 
 import Threading from './Threading';
 import Weave from './Weave';
