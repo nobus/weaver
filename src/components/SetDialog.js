@@ -10,42 +10,42 @@ class SetDialog extends Component {
         <div className='panel-body'>
 
           <div className='row'>
-            <div className='col-xs-1'>Ro</div>
-            <div className='col-xs-1'>
+            <div className='col-md-2'>Ro</div>
+            <div className='col-md-1'>
               <input type='text' className='form-control' value={16}/>
             </div>
-            <div className='col-xs-1'>Ry</div>
-            <div className='col-xs-1'>
-              <input type='text' className='form-control' value={16}/>
-            </div>
-          </div>
-
-          <div className='row'>
-            <div className='col-xs-1'>Threading size</div>
-            <div className='col-xs-1'>
-              <input type='text' className='form-control' value={16}/>
-            </div>
-            <div className='col-xs-1'>Treadling size</div>
-            <div className='col-xs-1'>
+            <div className='col-md-2'>Ry</div>
+            <div className='col-md-1'>
               <input type='text' className='form-control' value={16}/>
             </div>
           </div>
 
           <div className='row'>
-            <div className='col-xs-1'>Element size</div>
-            <div className='col-xs-1'>
+            <div className='col-md-2'>Threading size</div>
+            <div className='col-md-1'>
               <input type='text' className='form-control' value={16}/>
             </div>
-            <div className='col-xs-1'></div>
-            <div className='col-xs-1'></div>
+            <div className='col-md-2'>Treadling size</div>
+            <div className='col-md-1'>
+              <input type='text' className='form-control' value={16}/>
+            </div>
           </div>
 
           <div className='row'>
-            <div className='col-xs-1'></div>
-            <div className='col-xs-1'></div>
-            <div className='col-xs-1'></div>
+            <div className='col-md-2'>Element size</div>
+            <div className='col-md-1'>
+              <input type='text' className='form-control' value={16}/>
+            </div>
+            <div className='col-md-2'></div>
+            <div className='col-md-1'></div>
+          </div>
 
-            <div className='col-xs-1'>
+          <div className='row'>
+            <div className='col-md-2'></div>
+            <div className='col-md-1'></div>
+            <div className='col-md-2'></div>
+
+            <div className='col-md-1'>
               <button className='btn btn-default' type='button'>OK</button>
             </div>
 
