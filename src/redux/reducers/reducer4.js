@@ -4,7 +4,8 @@ import {
   WEAVE_ON, WEAVE_OFF,
   THREADING_ON, THREADING_OFF,
   TREADLING_ON, TREADLING_OFF,
-  TIE_UP_ON, TIE_UP_OFF} from '../constants';
+  TIE_UP_ON, TIE_UP_OFF,
+  SET_DIALOG_ON, SET_DIALOG_OFF} from '../constants';
 
 function initNewState(state) {
   return Object.assign({}, state,
