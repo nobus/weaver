@@ -1,57 +1,54 @@
 import React, { Component } from 'react';
-
-import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import {Panel, Grid, Row, Col, Button, FormControl} from 'react-bootstrap';
 
 class SetDialog extends Component {
   render() {
     return (
-      <div className='panel panel-default'>
-        <div className='panel-heading'>Settings</div>
-        <div className='panel-body'>
+      <Panel header='Settings'>
+        <Grid>
 
-          <div className='row'>
-            <div className='col-md-2'>Ro</div>
-            <div className='col-md-1'>
-              <input type='text' className='form-control' value={16}/>
-            </div>
-            <div className='col-md-2'>Ry</div>
-            <div className='col-md-1'>
-              <input type='text' className='form-control' value={16}/>
-            </div>
-          </div>
+          <Row>
+            <Col md={2}>Ro</Col>
+            <Col md={1}>
+              <FormControl type='text' value={16}/>
+            </Col>
+            <Col md={2}>Ry</Col>
+            <Col md={1}>
+              <FormControl type='text' value={16}/>
+            </Col>
+          </Row>
 
-          <div className='row'>
-            <div className='col-md-2'>Threading size</div>
-            <div className='col-md-1'>
-              <input type='text' className='form-control' value={16}/>
-            </div>
-            <div className='col-md-2'>Treadling size</div>
-            <div className='col-md-1'>
-              <input type='text' className='form-control' value={16}/>
-            </div>
-          </div>
+          <Row>
+            <Col md={2}>Threading size</Col>
+            <Col md={1}>
+              <FormControl type='text' value={16}/>
+            </Col>
+            <Col md={2}>Treadling size</Col>
+            <Col md={1}>
+              <FormControl type='text' value={16}/>
+            </Col>
+          </Row>
 
-          <div className='row'>
-            <div className='col-md-2'>Element size</div>
-            <div className='col-md-1'>
-              <input type='text' className='form-control' value={16}/>
-            </div>
-            <div className='col-md-2'></div>
-            <div className='col-md-1'></div>
-          </div>
+          <Row>
+            <Col md={2}>Element size</Col>
+            <Col md={1}>
+              <FormControl type='text' value={16}/>
+            </Col>
+            <Col md={2} />
+            <Col md={1} />
+          </Row>
 
-          <div className='row'>
-            <div className='col-md-2'></div>
-            <div className='col-md-1'></div>
-            <div className='col-md-2'></div>
+          <Row>
+            <Col md={2} />
+            <Col md={1} />
+            <Col md={2} />
+            <Col md={1}>
+              <Button>OK</Button>
+            </Col>
+          </Row>
 
-            <div className='col-md-1'>
-              <button className='btn btn-default' type='button'>OK</button>
-            </div>
-
-          </div>
-      </div>
-      </div>
+        </Grid>
+      </Panel>
     );
   }
 }

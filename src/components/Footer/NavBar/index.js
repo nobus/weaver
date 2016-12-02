@@ -1,17 +1,16 @@
 import React, { Component } from 'react';
+import { Navbar, Nav } from 'react-bootstrap';
 
 import SetButton from '../SetButton';
-
-import '../../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 class NavBar extends Component {
   render () {
     return (
-      <nav className='navbar navbar-default navbar-static-top'>
-        <div className='container-fluid'>
+      <Navbar>
+        <Nav>
           <SetButton />
-        </div>
-      </nav>
+        </Nav>
+      </Navbar>
     );
   }
 }

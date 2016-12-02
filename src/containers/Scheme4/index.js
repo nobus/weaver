@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Grid } from 'react-bootstrap';
 import { connect } from 'react-redux';
 
 import {
@@ -18,7 +19,6 @@ import SetDialog from '../../components/SetDialog';
 
 import './style.css';
 import '../../styles/index.css';
-import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 class Scheme4 extends Component {
   render() {
@@ -28,7 +28,8 @@ class Scheme4 extends Component {
       <div>
         <NavBar />
 
-        <div className='container'>
+        <Grid>
+
           <SetDialog />
 
           <div className='Scheme4'>
@@ -66,7 +67,9 @@ class Scheme4 extends Component {
               </span>
             </span>
           </div>
-        </div>
+
+        </Grid>
+
       </div>
     );
   }

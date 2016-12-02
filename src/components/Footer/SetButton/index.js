@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-
-import '../../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import { Button, Glyphicon } from 'react-bootstrap';
 
 class SetButton extends Component {
   constructor() {
@@ -11,9 +10,9 @@ class SetButton extends Component {
 
   render() {
     return (
-      <button onClick={this.handleClick} className='btn btn-default' type='button'>
-        <span className='glyphicon glyphicon-cog' aria-hidden='true'></span>
-      </button>
+      <Button onClick={this.handleClick}>
+        <Glyphicon glyph='cog' />
+      </Button>
     );
   }
 
