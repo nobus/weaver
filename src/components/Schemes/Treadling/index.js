@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
-import TreadlingRow from './TreadlingRow';
+import TreadlingRow from '../TreadlingRow';
 
-import '../styles/Treadling.css';
+import './style.css';
 
 class Treadling extends Component {
   render() {

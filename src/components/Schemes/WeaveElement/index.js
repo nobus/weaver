@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../styles/WeaveElement.css';
+import './style.css';
 
 class WeaveElement extends Component {
   constructor() {

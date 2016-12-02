@@ -2,16 +2,3 @@
   //border: 1px black solid;
   display: table;
 }
-
-.spanCell {
-  display: table-cell;
-  //width: 100%;
-}
-
-.spanRow {
-  display: table-row;
-}
-
-.whiteElement {
-	background: white;
-}

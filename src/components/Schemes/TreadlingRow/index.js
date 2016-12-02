@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
-import TreadlingElement from './TreadlingElement';
-import '../styles/Scheme4.css';
+import TreadlingElement from '../TreadlingElement';
+import '../../../styles/index.css';
 
 class TreadlingRow extends Component {
   render() {

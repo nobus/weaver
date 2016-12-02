@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 
-import TieUpElement from './TieUpElement';
+import TieUpElement from '../TieUpElement';
 
-import '../styles/TieUp.css';
-import '../styles/Scheme4.css';
+import './style.css';
+import '../../../styles/index.css';
 
 class TieUp extends Component {
   render() {

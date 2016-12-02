@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
-import WeaveElement from './WeaveElement';
-import '../styles/Weave.css';
-import '../styles/Scheme4.css';
+import WeaveElement from '../WeaveElement';
+import './style.css';
+import '../../../styles/index.css';
 
 class Weave extends Component {
   render() {

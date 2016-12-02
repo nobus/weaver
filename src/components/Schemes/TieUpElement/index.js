@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import '../styles/TieUpElement.css';
-import '../styles/Scheme4.css';
+import './style.css';
+import '../../../styles/index.css';
 
 class TieUpElement extends Component {
   constructor() {

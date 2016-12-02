@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
-import ThreadingRow from './ThreadingRow';
-import '../styles/Threading.css';
+import ThreadingRow from '../ThreadingRow';
+import './style.css';
 
 class Threading extends Component {
   /*

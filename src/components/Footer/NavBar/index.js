@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
-import SetButton from './SetButton';
+import SetButton from '../SetButton';
 
-import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import '../../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 class NavBar extends Component {
   render () {

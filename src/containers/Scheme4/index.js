@@ -6,18 +6,19 @@ import {
   threadingOn, threadingOff,
   treadlingOn, treadlingOff,
   tieUpOn, tieUpOff
-} from '../redux/actions/actions4';
+} from '../../redux/actions/actions4';
 
-import Threading from './Threading';
-import Weave from './Weave';
-import TieUp from './TieUp';
-import Treadling from './Treadling';
-import NavBar from './NavBar';
-import SetDialog from './SetDialog';
+import Threading from '../../components/Schemes/Threading';
+import Weave from '../../components/Schemes/Weave';
+import TieUp from '../../components/Schemes/TieUp';
+import Treadling from '../../components/Schemes/Treadling';
 
-import '../styles/Scheme4.css';
+import NavBar from '../../components/Footer/NavBar';
+import SetDialog from '../../components/SetDialog';
 
-import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import './style.css';
+import '../../styles/index.css';
+import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 class Scheme4 extends Component {
   render() {
