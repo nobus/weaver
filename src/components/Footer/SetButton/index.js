@@ -4,7 +4,6 @@ import { Button, Glyphicon } from 'react-bootstrap';
 class SetButton extends Component {
   constructor() {
     super();
-    this.state = {enabled: false};
     this.handleClick = this.handleClick.bind(this);
   }
 
@@ -16,9 +15,13 @@ class SetButton extends Component {
     );
   }
 
+  componentState() {
+    return this.props.settingState.dialogEnabled;
+  }
+
   handleClick(e) {
-    if (this.state.enabled) this.setState({enabled: false});
-    else this.setState({enabled: true});
+    if (this.componentState()) this.props.offClick();
+    else this.props.onClick();
   }
 }
 

@@ -14,7 +14,8 @@ function initNewState(state) {
       numberOfWeaves: state.numberOfWeaves,
       threadings: [...state.threadings],
       treadlings: [...state.treadlings],
-      tieUp: [...state.tieUp]
+      tieUp: [...state.tieUp],
+      settings: Object.assign({}, state.settings)
     }
   );
 }
@@ -75,13 +76,24 @@ function switcherTreadlingOff(newState, action) {
   return newState;
 }
 
+function switcherSetDialogOn(newState, action) {
+  newState.settings.dialogEnabled = true;
+  return newState;
+}
+
+function switcherSetDialogOff(newState, action) {
+  newState.settings.dialogEnabled = false;
+  return newState;
+}
+
 function initialState() {
   const newState = {
     weaves: [],
     numberOfWeaves: 0,
     threadings: [],
     treadlings: [],
-    tieUp: []
+    tieUp: [],
+    settings: {dialogEnabled: false}
   };
 
   const store4State = localStorage.getItem('store4State');
@@ -104,6 +116,8 @@ function switcher4(state, action) {
     case THREADING_OFF: return switcherThreadingOff(initNewState(state), action);
     case TREADLING_ON: return switcherTreadlingOn(initNewState(state), action);
     case TREADLING_OFF: return switcherTreadlingOff(initNewState(state), action);
+    case SET_DIALOG_ON: return switcherSetDialogOn(initNewState(state), action);
+    case SET_DIALOG_OFF: return switcherSetDialogOff(initNewState(state), action);
     default: return initialState();
   }
 }

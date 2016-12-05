@@ -5,10 +5,16 @@ import SetButton from '../SetButton';
 
 class NavBar extends Component {
   render () {
+    const {settingState, onClick, offClick} = this.props;
+
     return (
       <Navbar>
         <Nav>
-          <SetButton />
+          <SetButton
+            settingState={settingState}
+            onClick={onClick}
+            offClick={offClick}
+          />
         </Nav>
       </Navbar>
     );
