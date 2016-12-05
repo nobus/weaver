@@ -16,7 +16,6 @@ import TieUp from '../../components/Schemes/TieUp';
 import Treadling from '../../components/Schemes/Treadling';
 
 import NavBar from '../../components/Footer/NavBar';
-import SetDialog from '../../components/SetDialog';
 
 import './style.css';
 import '../../styles/index.css';
@@ -34,10 +33,6 @@ class Scheme4 extends Component {
         />
 
         <Grid>
-          {
-            switcher4.settings.dialogEnabled ? <SetDialog /> : false
-          }
-
           <div className='Scheme4'>
 
             <span className='spanRow'>
