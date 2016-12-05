@@ -2,15 +2,14 @@
 
 const path = require('path');
 const webpack = require('webpack');
-const combineLoaders = require('webpack-combine-loaders');
 
 module.exports = {
   devtool: 'cheap-module-source-map',
   entry: './src/index.js',
   output: {
-    filename: 'bundle.js',
     path: path.join(__dirname, '../public', 'static'),
-    publicPath: '/static/'
+    publicPath: '/static/',
+    filename: 'js/bundle.js'
   },
   plugins: [
     new webpack.DefinePlugin({
@@ -29,7 +28,7 @@ module.exports = {
         loader: 'url',
         query: {
           limit: 10000,
-          name: 'static/media/[name].[hash:8].[ext]'
+          name: 'media/[name].[hash:8].[ext]'
         }
       },
       {
@@ -49,23 +48,8 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        loader: combineLoaders([
-          {
-            loader: 'style-loader'
-          }, {
-            loader: 'css-loader',
-            query: {
-              modules: true,
-              localIdentName: '[name]__[local]___[hash:base64:5]'
-            }
-          }
-        ])
+        loader: "style-loader!css-loader"
       }
-    ]
-  },
-  postcss: function() {
-    return [
-      require('postcss-cssnext')
     ]
   }
 };
