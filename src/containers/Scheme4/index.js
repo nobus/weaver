@@ -17,8 +17,8 @@ import Treadling from '../../components/Schemes/Treadling';
 import NavBar from '../../components/Footer/NavBar';
 import SetDialog from '../../components/SetDialog';
 
-import './style.css';
-import '../../styles/index.css';
+import style from './style.css';
+//import '../../styles/index.css';
 
 class Scheme4 extends Component {
   render() {
@@ -32,17 +32,17 @@ class Scheme4 extends Component {
 
           <SetDialog />
 
-          <div className='Scheme4'>
+          <div className={style.Scheme4}>
 
-            <span className='spanRow'>
-              <span className='spanCell'>
+            <span className={style.spanRow}>
+              <span className={style.spanCell}>
                 <Threading
                   threadingsState={switcher4.threadings}
                   onClick={(row, col) => dispatch(threadingOn(row, col))}
                   offClick={(row, col) => dispatch(threadingOff(row, col))}
                 />
               </span>
-              <span className='spanCell'>
+              <span className={style.spanCell}>
                 <TieUp
                   currentState={switcher4.tieUp}
                   onClick={(row, col) => dispatch(tieUpOn(row, col))}
@@ -50,15 +50,15 @@ class Scheme4 extends Component {
                 />
               </span>
             </span>
-            <span className='spanRow'>
-              <span className='spanCell'>
+            <span className={style.spanRow}>
+              <span className={style.spanCell}>
                 <Weave
                   currentState={switcher4}
                   onClick={(row, col) => dispatch(weaveOn(row, col))}
                   offClick={(row, col) => dispatch(weaveOff(row, col))}
                 />
               </span>
-              <span className='spanCell'>
+              <span className={style.spanCell}>
                 <Treadling
                   treadlingsState={switcher4.treadlings}
                   onClick={(row, col) => dispatch(treadlingOn(row, col))}

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './style.css';
+import style from './style.css';
 
 class WeaveElement extends Component {
   constructor() {
@@ -39,11 +39,11 @@ class WeaveElement extends Component {
   }
 
   render() {
-    const style = this.componentState()
-      ? "WeaveElement redWeaveElement"
-      : "WeaveElement whiteWeaveElement";
+    const className = this.componentState()
+      ? style.WeaveElement + ' ' + style.redWeaveElement
+      : style.WeaveElement + ' ' + style.whiteWeaveElement;
 
-    return (<div onClick={this.handleClick} className={style}></div>);
+    return (<div onClick={this.handleClick} className={className}></div>);
   }
 
   handleClick(e) {
