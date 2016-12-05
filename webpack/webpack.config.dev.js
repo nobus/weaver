@@ -1,7 +1,8 @@
 'use strict';
 
-const path = require('path');
-const webpack = require('webpack');
+var path = require('path');
+var webpack = require('webpack');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   devtool: 'cheap-module-source-map',
@@ -14,7 +15,8 @@ module.exports = {
   plugins: [
     new webpack.DefinePlugin({
       NODE_ENV: JSON.stringify(process.env.NODE_ENV)
-    })
+    }),
+    new ExtractTextPlugin('css/bundle.css')
   ],
   module: {
     loaders: [
@@ -48,7 +50,9 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        loader: "style-loader!css-loader"
+        loader: ExtractTextPlugin.extract(
+          "style-loader",
+          "css-loader?modules=true&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]")
       }
     ]
   }
