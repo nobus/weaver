@@ -5,7 +5,7 @@ import {
   THREADING_ON, THREADING_OFF,
   TREADLING_ON, TREADLING_OFF,
   TIE_UP_ON, TIE_UP_OFF,
-  SET_DIALOG_ON, SET_DIALOG_OFF} from '../constants';
+  SAVE_SETTINGS} from '../constants';
 
 function initNewState(state) {
   return Object.assign({}, state,
@@ -76,13 +76,8 @@ function switcherTreadlingOff(newState, action) {
   return newState;
 }
 
-function switcherSetDialogOn(newState, action) {
-  newState.settings.dialogEnabled = true;
-  return newState;
-}
-
-function switcherSetDialogOff(newState, action) {
-  newState.settings.dialogEnabled = false;
+function saveSettings(newState, action) {
+  newState.settings = Object.assign({}, action.settings);
   return newState;
 }
 
@@ -93,7 +88,7 @@ function initialState() {
     threadings: [],
     treadlings: [],
     tieUp: [],
-    settings: {dialogEnabled: false}
+    settings: {}
   };
 
   const store4State = localStorage.getItem('store4State');
@@ -116,8 +111,7 @@ function switcher4(state, action) {
     case THREADING_OFF: return switcherThreadingOff(initNewState(state), action);
     case TREADLING_ON: return switcherTreadlingOn(initNewState(state), action);
     case TREADLING_OFF: return switcherTreadlingOff(initNewState(state), action);
-    case SET_DIALOG_ON: return switcherSetDialogOn(initNewState(state), action);
-    case SET_DIALOG_OFF: return switcherSetDialogOff(initNewState(state), action);
+    case SAVE_SETTINGS: return saveSettings(initNewState(state), action);
     default: return initialState();
   }
 }

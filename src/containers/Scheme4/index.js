@@ -7,7 +7,7 @@ import {
   threadingOn, threadingOff,
   treadlingOn, treadlingOff,
   tieUpOn, tieUpOff,
-  setDialogOn, setDialogOff
+  saveSettings
 } from '../../redux/actions/actions4';
 
 import Threading from '../../components/Schemes/Threading';
@@ -27,9 +27,8 @@ class Scheme4 extends Component {
     return (
       <div>
         <NavBar
-          settingState={switcher4.settings}
-          onClick={() => dispatch(setDialogOn())}
-          offClick={() => dispatch(setDialogOff())}
+          settingsState={switcher4.settings}
+          saveSettings={(settings) => dispatch(saveSettings(settings))}
         />
 
         <Grid>

@@ -3,7 +3,7 @@ import {
   THREADING_ON, THREADING_OFF,
   TREADLING_ON, TREADLING_OFF,
   TIE_UP_ON, TIE_UP_OFF,
-  SET_DIALOG_ON, SET_DIALOG_OFF} from '../constants';
+  SAVE_SETTINGS} from '../constants';
 
 export function weaveOn(r, c) {
   return {type: WEAVE_ON, row: r, col: c};
@@ -37,10 +37,6 @@ export function tieUpOff(r, c) {
   return {type: TIE_UP_OFF, row: r, col: c};
 }
 
-export function setDialogOn() {
-  return {type: SET_DIALOG_ON};
-}
-
-export function setDialogOff() {
-  return {type: SET_DIALOG_OFF};
+export function saveSettings(settings) {
+  return {type: SAVE_SETTINGS, settings: settings};
 }

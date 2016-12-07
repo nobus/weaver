@@ -4,16 +4,23 @@ import { Modal, Grid, Row, Col, Button, FormControl, Glyphicon } from 'react-boo
 class SetButton extends Component {
   constructor() {
     super();
+
+    this.state = {showModal: false};
     this.handleClick = this.handleClick.bind(this);
+    this.saveChanges = this.saveChanges.bind(this);
     this.close = this.close.bind(this);
+  }
+
+  initialLocalState() {
+    const {settingsState} = this.props;
 
     this.state = {
       showModal: false,
-      ro: '16',
-      ry: '16',
-      threadingSize: '16',
-      treadlingSize: '16',
-      elementSize: '16'
+      ro: settingsState.ro ? settingsState.ro : 16,
+      ry: settingsState.ry ? settingsState.ro : 16,
+      threadingSize: settingsState.threadingSize ? settingsState.threadingSize : 8,
+      treadlingSize: settingsState.treadlingSize ? settingsState.treadlingSize : 8,
+      elementSize: settingsState.elementSize ? settingsState.elementSize : 10
     };
   }
 
@@ -84,7 +91,7 @@ class SetButton extends Component {
             <Button onClick={this.close}>Close</Button>
             <Button
               bsStyle="primary"
-              onClick={this.close}>
+              onClick={this.saveChanges}>
               Save changes
             </Button>
           </Modal.Footer>
@@ -93,20 +100,25 @@ class SetButton extends Component {
     );
   }
 
-  componentState() {
-    return this.props.settingState.dialogEnabled;
-  }
-
   handleClick(e) {
+    this.initialLocalState();
     this.setState({ showModal: true });
-
-    if (this.componentState()) this.props.offClick();
-    else this.props.onClick();
   }
 
   close() {
-    console.log('close!!!');
     this.setState({ showModal: false });
+    this.initialLocalState();
+  }
+
+  saveChanges() {
+    this.setState({ showModal: false });
+    this.props.saveSettings({
+      ro: this.state.ro,
+      ry: this.state.ry,
+      threadingSize: this.state.threadingSize,
+      treadlingSize: this.state.treadlingSize,
+      elementSize: this.state.elementSize
+    });
   }
 }
 

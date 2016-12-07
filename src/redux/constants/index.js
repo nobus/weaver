@@ -7,5 +7,4 @@ export const TREADLING_OFF = 'TREADLING_OFF';
 export const TIE_UP_ON = 'TIE_UP_ON';
 export const TIE_UP_OFF = 'TIE_UP_OFF';
 
-export const SET_DIALOG_ON = 'SET_DIALOG_ON';
-export const SET_DIALOG_OFF = 'SET_DIALOG_OFF';
+export const SAVE_SETTINGS = 'SAVE_SETTINGS';
