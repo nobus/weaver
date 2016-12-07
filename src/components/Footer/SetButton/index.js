@@ -17,7 +17,7 @@ class SetButton extends Component {
     this.state = {
       showModal: false,
       ro: settingsState.ro ? settingsState.ro : 16,
-      ry: settingsState.ry ? settingsState.ro : 16,
+      ry: settingsState.ry ? settingsState.ry : 16,
       threadingSize: settingsState.threadingSize ? settingsState.threadingSize : 8,
       treadlingSize: settingsState.treadlingSize ? settingsState.treadlingSize : 8,
       elementSize: settingsState.elementSize ? settingsState.elementSize : 10
