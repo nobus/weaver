@@ -7,14 +7,15 @@ import '../../../styles/index.css';
 
 class TieUp extends Component {
   render() {
-    const {currentState, onClick, offClick} = this.props;
+    const {currentState, settingsState, onClick, offClick} = this.props;
     const indents = [];
 
-    for (let i = 8; i > 0; i--) {
+    for (let i = (settingsState.threadingSize ? settingsState.threadingSize : 8); i > 0; i--) {
       const rowIndents = [];
-      for (let j = 0; j < 8; j++)
+      for (let j = 0; j < (settingsState.treadlingSize ? settingsState.treadlingSize : 8); j++)
         rowIndents.push(<TieUpElement
           currentState={currentState}
+          settingsState={settingsState}
           onClick={onClick}
           offClick={offClick}
           row={i} col={j} key={j}

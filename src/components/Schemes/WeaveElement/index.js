@@ -39,11 +39,14 @@ class WeaveElement extends Component {
   }
 
   render() {
-    const style = this.componentState()
+    const className = this.componentState()
       ? "WeaveElement redWeaveElement"
       : "WeaveElement whiteWeaveElement";
 
-    return (<div onClick={this.handleClick} className={style}></div>);
+    const elementSize = this.props.currentState.settings.elementSize;
+    const style = {width: elementSize + 'px', height: elementSize + 'px'};
+
+    return (<div onClick={this.handleClick} className={className} style={style}></div>);
   }
 
   handleClick(e) {

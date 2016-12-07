@@ -23,11 +23,14 @@ class TreadlingElement extends Component {
   }
 
   render() {
-    const style = this.isEnabled()
+    const className = this.isEnabled()
       ? "TreadlingElement greenTreadlingElement"
       : "TreadlingElement whiteElement";
 
-    return (<div onClick={this.handleClick} className={style}></div>);
+    const elementSize = this.props.settingsState.elementSize;
+    const style = {width: elementSize + 'px', height: elementSize + 'px'};
+
+    return (<div onClick={this.handleClick} className={className} style={style}></div>);
   }
 }
 

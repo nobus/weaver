@@ -6,13 +6,14 @@ import './style.css';
 
 class Treadling extends Component {
   render() {
-    const {treadlingsState, onClick, offClick} = this.props;
+    const {treadlingsState, settingsState, onClick, offClick} = this.props;
     const indents = [];
 
-    for (let i = 0; i < 16; i++) {
+    for (let i = 0; i < (settingsState.ry ? settingsState.ry : 16); i++) {
       indents.push(<TreadlingRow
           key={i}
           treadlingsState={treadlingsState}
+          settingsState={settingsState}
           onClick={onClick}
           offClick={offClick}
           col={i}

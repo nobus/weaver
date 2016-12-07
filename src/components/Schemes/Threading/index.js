@@ -12,13 +12,17 @@ class Threading extends Component {
   }*/
 
   render() {
-    const {threadingsState, onClick, offClick} = this.props;
+    const {threadingsState, settingsState, onClick, offClick} = this.props;
     const indents = [];
 
-    for (let i = 8; i > /*this.rowNumber(4)*/0; i--) {
+    for (
+      let i = (settingsState.threadingSize ? settingsState.threadingSize : 8);
+      i > /*this.rowNumber(4)*/0;
+      i--) {
       indents.push(<ThreadingRow
           key={i}
           threadingsState={threadingsState}
+          settingsState={settingsState}
           onClick={onClick}
           offClick={offClick}
           row={i}
