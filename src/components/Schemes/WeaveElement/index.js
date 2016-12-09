@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import SVGRect from '../SVGRect';
+
 import './style.css';
 
 class WeaveElement extends Component {
@@ -46,7 +48,11 @@ class WeaveElement extends Component {
     const elementSize = this.props.currentState.settings.elementSize;
     const style = {width: elementSize + 'px', height: elementSize + 'px'};
 
-    return (<div onClick={this.handleClick} className={className} style={style}></div>);
+    return (
+      <div onClick={this.handleClick} className={className} style={style}>
+        {this.componentState() ? <SVGRect elementSize={elementSize}/> : false}
+      </div>
+    );
   }
 
   handleClick(e) {

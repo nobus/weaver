@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import SVGRect from '../SVGRect';
+
 import './style.css';
 import '../../../styles/index.css';
 
@@ -31,7 +33,11 @@ class TieUpElement extends Component {
 
     const elementSize = this.props.settingsState.elementSize;
     const style = {width: elementSize + 'px', height: elementSize + 'px'};
-    return (<div onClick={this.handleClick} className={className} style={style}></div>);
+    return (
+      <div onClick={this.handleClick} className={className} style={style}>
+        {this.componentState() ? <SVGRect elementSize={elementSize}/> : false}
+      </div>
+    );
   }
 
   handleClick(e) {
