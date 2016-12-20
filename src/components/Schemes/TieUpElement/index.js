@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import SVGRect from '../SVGRect';
+import SVGRectStroke from '../SVGRectStroke';
 
 import './style.css';
-import '../../../styles/index.css';
 
 class TieUpElement extends Component {
   constructor() {
@@ -27,15 +26,12 @@ class TieUpElement extends Component {
   }
 
   render() {
-    const className = this.componentState()
-      ? "WeaveElement greyTieUpElement"
-      : "WeaveElement whiteElement";
-
     const elementSize = this.props.settingsState.elementSize;
     const style = {width: elementSize + 'px', height: elementSize + 'px'};
     return (
-      <div onClick={this.handleClick} className={className} style={style}>
-        {this.componentState() ? <SVGRect elementSize={elementSize}/> : false}
+      // WeaveElement is a BUG !!!!!!!!!!!
+      <div onClick={this.handleClick} className='TieUpElement' style={style}>
+        {this.componentState() ? <SVGRectStroke elementSize={elementSize}/> : false}
       </div>
     );
   }

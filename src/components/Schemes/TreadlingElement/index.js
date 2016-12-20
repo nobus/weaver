@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import SVGRect from '../SVGRect';
+import SVGRectCircle from '../SVGRectCircle';
 
 import './style.css';
-import '../../../styles/index.css';
 
 class TreadlingElement extends Component {
   constructor(props) {
@@ -25,16 +24,12 @@ class TreadlingElement extends Component {
   }
 
   render() {
-    const className = this.isEnabled()
-      ? "TreadlingElement greenTreadlingElement"
-      : "TreadlingElement whiteElement";
-
     const elementSize = this.props.settingsState.elementSize;
     const style = {width: elementSize + 'px', height: elementSize + 'px'};
 
     return (
-      <div onClick={this.handleClick} className={className} style={style}>
-        {this.isEnabled() ? <SVGRect elementSize={elementSize}/> : false}
+      <div onClick={this.handleClick} className='TreadlingElement' style={style}>
+        {this.isEnabled() ? <SVGRectCircle elementSize={elementSize}/> : false}
       </div>
     );
   }

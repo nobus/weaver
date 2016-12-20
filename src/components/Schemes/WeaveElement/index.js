@@ -42,8 +42,8 @@ class WeaveElement extends Component {
 
   render() {
     const className = this.componentState()
-      ? "WeaveElement redWeaveElement"
-      : "WeaveElement whiteWeaveElement";
+      ? 'WeaveElement selectWeaveElement'
+      : 'WeaveElement unselectWeaveElement';
 
     const elementSize = this.props.currentState.settings.elementSize;
     const style = {width: elementSize + 'px', height: elementSize + 'px'};

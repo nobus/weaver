@@ -3,9 +3,5 @@
 	height: 10px;
 	border: 1px black solid;
 	position: relative;
-  float: right;
-}
-
-.greyTieUpElement {
-	background: grey;
+  float: left;
 }
