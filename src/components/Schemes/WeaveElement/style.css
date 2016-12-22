@@ -1,21 +1,6 @@
 .WeaveElement {
   width: 10px;
 	height: 10px;
-	border: 1px black solid;
 	position: relative;
   float: left;
-}
-
-.unselectWeaveElement {
-  border-top: 1px black solid;
-  border-bottom: 1px black solid;
-  border-left: 1px white solid;
-  border-right: 1px white solid;
-}
-
-.selectWeaveElement {
-  border-top: 1px grey solid;
-  border-bottom: 1px grey solid;
-  border-left: 1px black solid;
-  border-right: 1px black solid;
 }

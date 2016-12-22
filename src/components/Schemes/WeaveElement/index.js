@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import SVGRect from '../SVGRect';
+import SVGSelectRect from '../SVGSelectRect';
+import SVGUnselectRect from '../SVGUnselectRect';
 
 import './style.css';
 
@@ -41,16 +42,15 @@ class WeaveElement extends Component {
   }
 
   render() {
-    const className = this.componentState()
-      ? 'WeaveElement selectWeaveElement'
-      : 'WeaveElement unselectWeaveElement';
-
     const elementSize = this.props.currentState.settings.elementSize;
     const style = {width: elementSize + 'px', height: elementSize + 'px'};
 
     return (
-      <div onClick={this.handleClick} className={className} style={style}>
-        {this.componentState() ? <SVGRect elementSize={elementSize}/> : false}
+      <div onClick={this.handleClick} className={'WeaveElement'} style={style}>
+        {this.componentState()
+          ? <SVGSelectRect elementSize={elementSize}/>
+          : <SVGUnselectRect elementSize={elementSize}/>
+        }
       </div>
     );
   }
