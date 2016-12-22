@@ -4,20 +4,13 @@ import ThreadingRow from '../ThreadingRow';
 import './style.css';
 
 class Threading extends Component {
-  /*
-  rowNumber(n) {
-    return (this.props.currentState.numberOfWeaves <= n)
-      ? n
-      : this.props.currentState.numberOfWeaves
-  }*/
-
   render() {
     const {threadingsState, settingsState, onClick, offClick} = this.props;
     const indents = [];
 
     for (
       let i = (settingsState.threadingSize ? settingsState.threadingSize : 8);
-      i > /*this.rowNumber(4)*/0;
+      i > 0;
       i--) {
       indents.push(<ThreadingRow
           key={i}
