@@ -9,6 +9,8 @@
   },
   "dependencies": {
     "bootstrap": "^3.3.7",
+    "lokka": "^1.7.0",
+    "lokka-transport-http": "^1.6.1",
     "react": "^15.3.2",
     "react-bootstrap": "^0.30.7",
     "react-dom": "^15.3.2",
