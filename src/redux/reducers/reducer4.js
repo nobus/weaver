@@ -23,7 +23,8 @@ function initNewState(state) {
 function switcherWeaveOn(newState, action) {
   newState.numberOfWeaves++;
 
-  if (newState.weaves[action.row] === undefined)
+  if (newState.weaves[action.row] === undefined
+      || newState.weaves[action.row] === null)
     newState.weaves[action.row] = [];
 
   newState.weaves[action.row][action.col] = true;
@@ -33,7 +34,8 @@ function switcherWeaveOn(newState, action) {
 function switcherWeaveOff(newState, action) {
   newState.numberOfWeaves--;
 
-  if (newState.weaves[action.row] === undefined)
+  if (newState.weaves[action.row] === undefined
+      || newState.weaves[action.row] === null)
     newState.weaves[action.row] = [];
 
   newState.weaves[action.row][action.col] = false;
@@ -41,7 +43,8 @@ function switcherWeaveOff(newState, action) {
 }
 
 function switcherTieUpOn(newState, action) {
-  if (newState.tieUp[action.row] === undefined)
+  if (newState.tieUp[action.row] === undefined
+      || newState.tieUp[action.row] === null)
     newState.tieUp[action.row] = [];
 
   newState.tieUp[action.row][action.col] = true;
@@ -49,7 +52,8 @@ function switcherTieUpOn(newState, action) {
 }
 
 function switcherTieUpOff(newState, action) {
-  if (newState.tieUp[action.row] === undefined)
+  if (newState.tieUp[action.row] === undefined
+      || newState.tieUp[action.row] === null)
     newState.tieUp[action.row] = [];
 
   newState.tieUp[action.row][action.col] = false;
