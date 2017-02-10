@@ -31,7 +31,7 @@ class Scheme4 extends Component {
           saveSettings={(settings) => dispatch(saveSettings(settings))}
         />
 
-        <Grid>
+        <Grid fluid={true}>
           <div className='Scheme4'>
 
             <span className='spanRow'>

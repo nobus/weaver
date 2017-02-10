@@ -1,3 +1,7 @@
+body {
+  margin-top: 60px;
+}
+
 .spanCell {
   display: table-cell;
   //width: 100%;

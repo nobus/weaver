@@ -8,7 +8,7 @@ class NavBar extends Component {
     const {settingsState, saveSettings} = this.props;
 
     return (
-      <Navbar>
+      <Navbar fluid={true} fixedTop={true}>
         <Nav>
           <SetButton
             settingsState={settingsState}
