@@ -1,0 +1,5 @@
+.threadingsColorBar {
+  display: table;
+  margin: 1px;
+  border: 1px solid black;
+}
