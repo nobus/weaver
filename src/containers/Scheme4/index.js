@@ -11,6 +11,7 @@ import {
 } from '../../redux/actions/actions4';
 
 import Threading from '../../components/Schemes/Threading';
+import ThreadingsColorBar from '../../components/Schemes/ThreadingsColorBar';
 import Weave from '../../components/Schemes/Weave';
 import TieUp from '../../components/Schemes/TieUp';
 import Treadling from '../../components/Schemes/Treadling';
@@ -44,6 +45,13 @@ class Scheme4 extends Component {
           <div className='Scheme4' style={{width: `${width}px`, height: `${height}px`}}>
 
             <div className='column'>
+
+              <div style={{
+                width: '20px',
+                height: '20px',
+                margin: '2px'}}
+              />
+
               <TieUp
                 currentState={switcher4.tieUp}
                 settingsState={switcher4.settings}
@@ -59,6 +67,10 @@ class Scheme4 extends Component {
             </div>
 
             <div className='column'>
+              <ThreadingsColorBar
+                ro={switcher4.settings.ro}
+                elementSize={switcher4.settings.elementSize}
+              />
               <Threading
                 threadingsState={switcher4.threadings}
                 settingsState={switcher4.settings}
