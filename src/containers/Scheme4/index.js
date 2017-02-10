@@ -43,41 +43,35 @@ class Scheme4 extends Component {
         <Grid fluid={true}>
           <div className='Scheme4' style={{width: `${width}px`, height: `${height}px`}}>
 
-            <span className='spanRow'>
-              <span className='spanCell'>
-                <Threading
-                  threadingsState={switcher4.threadings}
-                  settingsState={switcher4.settings}
-                  onClick={(row, col) => dispatch(threadingOn(row, col))}
-                  offClick={(row, col) => dispatch(threadingOff(row, col))}
-                />
-              </span>
-              <span className='spanCell'>
-                <TieUp
-                  currentState={switcher4.tieUp}
-                  settingsState={switcher4.settings}
-                  onClick={(row, col) => dispatch(tieUpOn(row, col))}
-                  offClick={(row, col) => dispatch(tieUpOff(row, col))}
-                />
-              </span>
-            </span>
-            <span className='spanRow'>
-              <span className='spanCell'>
-                <Weave
-                  currentState={switcher4}
-                  onClick={(row, col) => dispatch(weaveOn(row, col))}
-                  offClick={(row, col) => dispatch(weaveOff(row, col))}
-                />
-              </span>
-              <span className='spanCell'>
-                <Treadling
-                  treadlingsState={switcher4.treadlings}
-                  settingsState={switcher4.settings}
-                  onClick={(row, col) => dispatch(treadlingOn(row, col))}
-                  offClick={(row, col) => dispatch(treadlingOff(row, col))}
-                />
-              </span>
-            </span>
+            <div className='column'>
+              <TieUp
+                currentState={switcher4.tieUp}
+                settingsState={switcher4.settings}
+                onClick={(row, col) => dispatch(tieUpOn(row, col))}
+                offClick={(row, col) => dispatch(tieUpOff(row, col))}
+              />
+              <Treadling
+                treadlingsState={switcher4.treadlings}
+                settingsState={switcher4.settings}
+                onClick={(row, col) => dispatch(treadlingOn(row, col))}
+                offClick={(row, col) => dispatch(treadlingOff(row, col))}
+              />
+            </div>
+
+            <div>
+              <Threading
+                threadingsState={switcher4.threadings}
+                settingsState={switcher4.settings}
+                onClick={(row, col) => dispatch(threadingOn(row, col))}
+                offClick={(row, col) => dispatch(threadingOff(row, col))}
+              />
+              <Weave
+                currentState={switcher4}
+                onClick={(row, col) => dispatch(weaveOn(row, col))}
+                offClick={(row, col) => dispatch(weaveOff(row, col))}
+              />
+            </div>
+
           </div>
 
         </Grid>
