@@ -58,7 +58,6 @@ class WeaveElement extends Component {
 
     return (
       <div onClick={this.handleClick} className={'WeaveElement'} style={style}>
-
       </div>
     );
   }
