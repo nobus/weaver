@@ -9,7 +9,7 @@ class Treadling extends Component {
     const {treadlingsState, settingsState, onClick, offClick} = this.props;
     const indents = [];
 
-    for (let i = 0; i < (settingsState.ry ? settingsState.ry : 16); i++) {
+    for (let i = 0; i < settingsState.ry; i++) {
       indents.push(<TreadlingRow
           key={i}
           treadlingsState={treadlingsState}
