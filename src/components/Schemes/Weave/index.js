@@ -34,8 +34,6 @@ class Weave extends Component {
       height: (currentState.settings.ry * elementSize) + 2
     };
 
-    console.log(style);
-
     return (
       <div className='Weave' style={style}>
         {indents}
