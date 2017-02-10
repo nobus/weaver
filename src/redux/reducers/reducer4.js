@@ -43,19 +43,11 @@ function switcherWeaveOff(newState, action) {
 }
 
 function switcherTieUpOn(newState, action) {
-  if (newState.tieUp[action.row] === undefined
-      || newState.tieUp[action.row] === null)
-    newState.tieUp[action.row] = [];
-
   newState.tieUp[action.row][action.col] = true;
   return newState;
 }
 
 function switcherTieUpOff(newState, action) {
-  if (newState.tieUp[action.row] === undefined
-      || newState.tieUp[action.row] === null)
-    newState.tieUp[action.row] = [];
-
   newState.tieUp[action.row][action.col] = false;
   return newState;
 }

@@ -9,17 +9,15 @@ class Threading extends Component {
     const indents = [];
 
     for (
-      let i = (settingsState.threadingSize ? settingsState.threadingSize : 8);
-      i > 0;
-      i--) {
-      indents.push(<ThreadingRow
-          key={i}
-          threadingsState={threadingsState}
-          settingsState={settingsState}
-          onClick={onClick}
-          offClick={offClick}
-          row={i}
-        />);
+      let i = settingsState.threadingSize-1; i >= 0; i--) {
+        indents.push(<ThreadingRow
+            key={i}
+            threadingsState={threadingsState}
+            settingsState={settingsState}
+            onClick={onClick}
+            offClick={offClick}
+            row={i}
+          />);
     }
 
     return (

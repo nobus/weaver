@@ -10,9 +10,9 @@ class Weave extends Component {
 
     const indents = [];
 
-    for (let i = 0; i < (currentState.settings.ro ? currentState.settings.ro : 16); i++) {
+    for (let i = 0; i < currentState.settings.ro; i++) {
       const colIndents = [];
-      for (let j = 0; j < (currentState.settings.ry ? currentState.settings.ry : 16); j++)
+      for (let j = 0; j < currentState.settings.ry; j++)
         colIndents.push(<WeaveElement
           currentState={currentState}
           onClick={onClick}

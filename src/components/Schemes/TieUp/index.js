@@ -10,9 +10,9 @@ class TieUp extends Component {
     const {currentState, settingsState, onClick, offClick} = this.props;
     const indents = [];
 
-    for (let i = (settingsState.threadingSize ? settingsState.threadingSize : 8); i > 0; i--) {
+    for (let i = settingsState.threadingSize-1; i >= 0; i--) {
       const rowIndents = [];
-      for (let j = 0; j < (settingsState.treadlingSize ? settingsState.treadlingSize : 8); j++)
+      for (let j = 0; j < settingsState.treadlingSize; j++)
         rowIndents.push(<TieUpElement
           currentState={currentState}
           settingsState={settingsState}
