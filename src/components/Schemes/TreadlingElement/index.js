@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import SVGRectCircle from '../SVGRectCircle';
 
 import './style.css';
 
@@ -27,9 +26,22 @@ class TreadlingElement extends Component {
     const elementSize = this.props.settingsState.elementSize;
     const style = {width: elementSize + 'px', height: elementSize + 'px'};
 
+    const styleForInnerCircle = {
+      width: elementSize-4 + 'px',
+      height: elementSize-4 + 'px',
+      borderRadius: elementSize/2 + 'px',
+      border: '1px solid black',
+      backgroundColor: 'grey',
+      marginTop: '1px',
+      marginLeft: '1px'
+    };
+
     return (
       <div onClick={this.handleClick} className='TreadlingElement' style={style}>
-        {this.isEnabled() ? <SVGRectCircle elementSize={elementSize}/> : false}
+        {this.isEnabled()
+          ? <div style={styleForInnerCircle}/>
+          : false
+        }
       </div>
     );
   }
