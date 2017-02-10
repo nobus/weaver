@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import SVGRectStroke from '../SVGRectStroke';
 
 import './style.css';
 
@@ -28,10 +27,23 @@ class TieUpElement extends Component {
   render() {
     const elementSize = this.props.settingsState.elementSize;
     const style = {width: elementSize + 'px', height: elementSize + 'px'};
+
+    const styleForInnerDiv = {
+      width: elementSize-6 + 'px',
+      height: elementSize-6 + 'px',
+      border: '1px solid black',
+      backgroundColor: 'grey',
+      marginTop: '2px',
+      marginLeft: '2px'
+    };
+
     return (
-      // WeaveElement is a BUG !!!!!!!!!!!
       <div onClick={this.handleClick} className='TieUpElement' style={style}>
-        {this.componentState() ? <SVGRectStroke elementSize={elementSize}/> : false}
+        {
+          this.componentState()
+          ? <div style={styleForInnerDiv} />
+          : false
+        }
       </div>
     );
   }
