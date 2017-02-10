@@ -41,23 +41,19 @@ class WeaveElement extends Component {
 
   render() {
     const elementSize = this.props.currentState.settings.elementSize;
-    const style = this.componentState()
-      ? {
-          width: elementSize + 'px',
-          height: elementSize + 'px',
-          backgroundColor: 'grey',
-          borderStyle: 'none solid',
-          borderWidth: '1px'
-        }
-      : {
-          width: elementSize + 'px',
-          height: elementSize + 'px',
-          borderStyle: 'solid none',
-          borderWidth: '1px'
-        };
+
+    const state = this.componentState();
+
+    const style = state
+      ? {width: elementSize + 'px', height: elementSize + 'px'}
+      : {width: elementSize + 'px', height: elementSize + 'px'};
+
+    const className = state
+      ? 'WeaveElement selectedWeaveElement'
+      : 'WeaveElement unselectedWeaveElement'
 
     return (
-      <div onClick={this.handleClick} className={'WeaveElement'} style={style}>
+      <div onClick={this.handleClick} className={className} style={style}>
       </div>
     );
   }
