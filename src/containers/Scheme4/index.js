@@ -58,7 +58,7 @@ class Scheme4 extends Component {
               />
             </div>
 
-            <div>
+            <div className='column'>
               <Threading
                 threadingsState={switcher4.threadings}
                 settingsState={switcher4.settings}
