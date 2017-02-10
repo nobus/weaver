@@ -24,6 +24,15 @@ class Scheme4 extends Component {
   render() {
     const {dispatch, switcher4} = this.props;
 
+    const elementSize = parseInt(switcher4.settings.elementSize, 10);
+    const ro = parseInt(switcher4.settings.ro, 10);
+    const ry = parseInt(switcher4.settings.ry, 10);
+    const threadingSize = parseInt(switcher4.settings.threadingSize, 10);
+    const treadlingSize = parseInt(switcher4.settings.treadlingSize, 10);
+
+    const width = elementSize * (ro + treadlingSize + 2);
+    const height = elementSize * (ry + threadingSize + 2);
+
     return (
       <div>
         <NavBar
@@ -32,7 +41,7 @@ class Scheme4 extends Component {
         />
 
         <Grid fluid={true}>
-          <div className='Scheme4'>
+          <div className='Scheme4' style={{width: `${width}px`, height: `${height}px`}}>
 
             <span className='spanRow'>
               <span className='spanCell'>
