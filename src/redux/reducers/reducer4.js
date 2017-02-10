@@ -86,13 +86,24 @@ function saveSettings(newState, action) {
 }
 
 function initialState() {
+  const settings = {
+    ro: 30,
+    ry: 15,
+    threadingSize: 4,
+    treadlingSize: 4,
+    elementSize: 20
+  };
+
+  const tieUp = [];
+  for (let i = 0; i < settings.treadlingSize; i++) tieUp.push([]);
+
   const newState = {
     weaves: [],
     numberOfWeaves: 0,
     threadings: [],
     treadlings: [],
-    tieUp: [],
-    settings: {}
+    tieUp: tieUp,
+    settings: settings
   };
 
   const store4State = localStorage.getItem('store4State');
