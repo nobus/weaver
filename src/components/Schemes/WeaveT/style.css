@@ -1,0 +1,20 @@
+.Weave {
+  border: 1px black solid;
+  margin: 1px;
+}
+
+.WeaveElement {
+  width: 10px;
+	height: 10px;
+  border-width: 1px;
+  border-color: black;
+}
+
+.selectedWeaveElement {
+  background-color: grey;
+  border-style: none solid
+}
+
+.unselectedWeaveElement {
+  border-style: solid none
+}
