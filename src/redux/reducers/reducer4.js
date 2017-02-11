@@ -15,7 +15,8 @@ function initNewState(state) {
       threadings: [...state.threadings],
       treadlings: [...state.treadlings],
       tieUp: [...state.tieUp],
-      settings: Object.assign({}, state.settings)
+      settings: Object.assign({}, state.settings),
+      diff: {}
     }
   );
 }
@@ -38,7 +39,8 @@ function initialState() {
     threadings: [],
     treadlings: [],
     tieUp: tieUp,
-    settings: settings
+    settings: settings,
+    diff: {}
   };
 
   const store4State = localStorage.getItem('store4State');
@@ -75,40 +77,45 @@ function switcherWeaveOff(newState, action) {
 
 function switcherTieUpOn(newState, action) {
   newState.tieUp[action.row][action.col] = true;
+  newState.diff.tieUp = {col: action.col, row: action.row, flag: true};
   return newState;
 }
 
 function switcherTieUpOff(newState, action) {
   newState.tieUp[action.row][action.col] = false;
+  newState.diff.tieUp = {col: action.col, row: action.row, flag: false};
   return newState;
 }
 
 function switcherThreadingOn(newState, action) {
   newState.threadings[action.col] = action.row;
+  newState.diff.threadings = {col: action.col, row: action.row}
   return newState;
 }
 
 function switcherThreadingOff(newState, action) {
   newState.threadings[action.col] = undefined;
+  newState.diff.threadings = {col:action.col, row: undefined}
   return newState;
 }
 
 function switcherTreadlingOn(newState, action) {
   newState.treadlings[action.col] = action.row;
+  newState.diff.treadlings = {col: action.col, row: action.row};
   return newState;
 }
 
 function switcherTreadlingOff(newState, action) {
   newState.treadlings[action.col] = undefined;
+  newState.diff.treadlings = {col: action.col, row: undefined};
   return newState;
 }
 
 function saveSettings(newState, action) {
   newState.settings = Object.assign({}, action.settings);
+  newState.diff.settings = true;
   return newState;
 }
-
-
 
 function switcher4(state, action) {
   switch (action.type) {
