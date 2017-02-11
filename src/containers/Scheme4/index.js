@@ -13,6 +13,7 @@ import {
 import Threading from '../../components/Schemes/Threading';
 import ThreadingsColorBar from '../../components/Schemes/ThreadingsColorBar';
 import Weave from '../../components/Schemes/Weave';
+import WeaveT from '../../components/Schemes/WeaveT';
 import TieUp from '../../components/Schemes/TieUp';
 import Treadling from '../../components/Schemes/Treadling';
 
@@ -77,7 +78,7 @@ class Scheme4 extends Component {
                 onClick={(row, col) => dispatch(threadingOn(row, col))}
                 offClick={(row, col) => dispatch(threadingOff(row, col))}
               />
-              <Weave
+              <WeaveT
                 currentState={switcher4}
                 onClick={(row, col) => dispatch(weaveOn(row, col))}
                 offClick={(row, col) => dispatch(weaveOff(row, col))}
