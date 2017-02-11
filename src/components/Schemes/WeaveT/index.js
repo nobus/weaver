@@ -27,7 +27,7 @@ class WeaveT extends Component {
     } else {
       this.applyThreadingsDiff();
       this.applyTreadlingsDiff();
-      this.applyTieUpDiff(currentState.diff);
+      this.applyTieUpDiff();
       this.applySettingsDiff();
     }
 
@@ -98,8 +98,31 @@ class WeaveT extends Component {
     }
   }
 
-  applyTieUpDiff(diff) {
-    if (diff.tieUp) {
+  applyTieUpDiff() {
+    if (this.props.currentState.diff.tieUp) {
+      const { col, row, flag } = this.props.currentState.diff.tieUp;
+      const threadings = [];
+      const treadlings = [];
+
+      for (let i = 0; i < this.props.currentState.threadings.length; i++) {
+        if (this.props.currentState.threadings[i] === row)
+          threadings.push(i);
+      }
+
+      for (let i = 0; i < this.props.currentState.treadlings.length; i++) {
+        if (this.props.currentState.treadlings[i] === col)
+          treadlings.push(i);
+      }
+
+      for (let i = 0; i < threadings.length; i++) {
+        let th = threadings[i];
+        for (let ii = 0; ii < treadlings.length; ii++) {
+          let tr = treadlings[ii];
+          this.indents[th].props.children[tr] = flag
+            ? <WeaveTEnabledElem key={tr} col={th} row={tr} />
+            : <WeaveTDisabledElem key={tr} col={th} row={tr} />;
+        }
+      }
     }
   }
 
