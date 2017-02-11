@@ -17,12 +17,18 @@ const store4 = createStore(
   applyMiddleware(loggerMiddleware)
 );
 
+/*
 store4.subscribe(() => {
+  const state = store4.getState();
+  delete state.switcher4.diff;
+
+
   localStorage.setItem(
     'store4State',
-    JSON.stringify(store4.getState())
+    JSON.stringify(state)
   );
 });
+*/
 
 ReactDOM.render(
   <Provider store={store4}>
