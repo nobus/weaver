@@ -20,6 +20,37 @@ function initNewState(state) {
   );
 }
 
+function initialState() {
+  const settings = {
+    ro: 30,
+    ry: 15,
+    threadingSize: 4,
+    treadlingSize: 4,
+    elementSize: 20
+  };
+
+  const tieUp = [];
+  for (let i = 0; i < settings.treadlingSize; i++) tieUp.push([]);
+
+  const newState = {
+    weaves: [],
+    numberOfWeaves: 0,
+    threadings: [],
+    treadlings: [],
+    tieUp: tieUp,
+    settings: settings
+  };
+
+  const store4State = localStorage.getItem('store4State');
+
+  if (store4State) {
+    const persistedState = JSON.parse(store4State);
+    return persistedState.switcher4;
+  } else {
+    return newState;
+  }
+}
+
 function switcherWeaveOn(newState, action) {
   newState.numberOfWeaves++;
 
@@ -77,36 +108,7 @@ function saveSettings(newState, action) {
   return newState;
 }
 
-function initialState() {
-  const settings = {
-    ro: 30,
-    ry: 15,
-    threadingSize: 4,
-    treadlingSize: 4,
-    elementSize: 20
-  };
 
-  const tieUp = [];
-  for (let i = 0; i < settings.treadlingSize; i++) tieUp.push([]);
-
-  const newState = {
-    weaves: [],
-    numberOfWeaves: 0,
-    threadings: [],
-    treadlings: [],
-    tieUp: tieUp,
-    settings: settings
-  };
-
-  const store4State = localStorage.getItem('store4State');
-
-  if (store4State) {
-    const persistedState = JSON.parse(store4State);
-    return persistedState.switcher4;
-  } else {
-    return newState;
-  }
-}
 
 function switcher4(state, action) {
   switch (action.type) {
