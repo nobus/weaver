@@ -47,11 +47,13 @@ class Scheme4 extends Component {
 
             <div className='column'>
 
+              {/*
               <div style={{
                 width: '20px',
                 height: '20px',
                 margin: '2px'}}
               />
+              */}
 
               <TieUp
                 currentState={switcher4.tieUp}
@@ -68,10 +70,12 @@ class Scheme4 extends Component {
             </div>
 
             <div className='column'>
+              {/*
               <ThreadingsColorBar
                 ro={switcher4.settings.ro}
                 elementSize={switcher4.settings.elementSize}
               />
+              */}
               <Threading
                 threadingsState={switcher4.threadings}
                 settingsState={switcher4.settings}
