@@ -24,7 +24,7 @@ function initNewState(state) {
 function initialState() {
   const settings = {
     ro: 30,
-    ry: 15,
+    ry: 30,
     threadingSize: 4,
     treadlingSize: 4,
     elementSize: 20
