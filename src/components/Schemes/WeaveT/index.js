@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import WeaveTDisabledElem from '../WeaveTDisabledElem';
 import WeaveTEnabledElem from '../WeaveTEnabledElem';
+import WeaverTElement from '../WeaveTElement';
 
 import './style.css';
 import '../../../styles/index.css';
@@ -46,7 +47,7 @@ class WeaveT extends Component {
         const colIndents = [];
 
         for (let j = 0; j < this.props.currentState.settings.ry; j++) {
-          colIndents.push(<WeaveTDisabledElem key={j} col={col} row={j} />);
+          colIndents.push(<WeaverTElement key={j} col={col} row={j} enabled={false} />);
         }
 
         this.indents[col] = (
@@ -59,8 +60,8 @@ class WeaveT extends Component {
 
         for (let j = 0; j < this.props.currentState.settings.ry; j++) {
           const elem = this.componentState(col, j)
-            ? <WeaveTEnabledElem key={j} col={col} row={j} />
-            : <WeaveTDisabledElem key={j} col={col} row={j} />;
+            ? <WeaverTElement key={j} col={col} row={j} enabled={true} />
+            : <WeaverTElement key={j} col={col} row={j} enabled={false} />;
 
           colIndents.push(elem);
         }
@@ -80,17 +81,18 @@ class WeaveT extends Component {
 
       if (row === undefined) {
         for (let i = 0; i < this.indents.length; i++) {
-          this.indents[i].props.children[col] = <WeaveTDisabledElem
+          this.indents[i].props.children[col] = <WeaverTElement
                                                   key={col}
                                                   col={row}
                                                   row={col}
+                                                  enabled={false}
                                                 />;
         }
       } else {
         for (let i = 0; i < this.indents.length; i++) {
           const elem = this.componentState(i, col)
-            ? <WeaveTEnabledElem key={col} col={i} row={col} />
-            : <WeaveTDisabledElem key={col} col={i} row={col} />;
+            ? <WeaverTElement key={col} col={i} row={col} enabled={true} />
+            : <WeaverTElement key={col} col={i} row={col} enabled={false} />;
 
           this.indents[i].props.children[col] = elem;
         }
@@ -119,8 +121,8 @@ class WeaveT extends Component {
         for (let ii = 0; ii < treadlings.length; ii++) {
           let tr = treadlings[ii];
           this.indents[th].props.children[tr] = flag
-            ? <WeaveTEnabledElem key={tr} col={th} row={tr} />
-            : <WeaveTDisabledElem key={tr} col={th} row={tr} />;
+            ? <WeaverTElement key={tr} col={th} row={tr} enabled={true} />
+            : <WeaverTElement key={tr} col={th} row={tr} enabled={false} />;
         }
       }
     }
@@ -145,8 +147,8 @@ class WeaveT extends Component {
 
           for (let j = 0; j < ry; j++) {
             const elem = this.componentState(i, j)
-              ? <WeaveTEnabledElem key={j} col={i} row={j} />
-              : <WeaveTDisabledElem key={j} col={i} row={j} />;
+              ? <WeaverTElement key={j} col={i} row={j} enabled={true} />
+              : <WeaverTElement key={j} col={i} row={j} enabled={false} />;
 
             colIndents.push(elem);
           }
@@ -165,8 +167,8 @@ class WeaveT extends Component {
         for (let i = 0; i < this.indents.length; i++) {
           for (let j = this.indents[i].props.children.length; j < ry; j++) {
             const elem = this.componentState(i, j)
-              ? <WeaveTEnabledElem key={j} col={i} row={j} />
-              : <WeaveTDisabledElem key={j} col={i} row={j} />;
+              ? <WeaverTElement key={j} col={i} row={j} enabled={true} />
+              : <WeaverTElement key={j} col={i} row={j} enabled={false} />;
 
             this.indents[i].props.children.push(elem);
           }
@@ -218,8 +220,8 @@ class WeaveT extends Component {
 
       for (let j = 0; j < this.props.currentState.settings.ry; j++) {
         const elem = this.componentState(i, j)
-          ? <WeaveTEnabledElem key={j} col={i} row={j} />
-          : <WeaveTDisabledElem key={j} col={i} row={j} />;
+          ? <WeaverTElement key={j} col={i} row={j} enabled={true} />
+          : <WeaverTElement key={j} col={i} row={j} enabled={false} />;
 
         colIndents.push(elem);
       }
