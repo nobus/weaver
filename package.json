@@ -1,6 +1,6 @@
 {
   "name": "weaver",
-  "version": "0.1.20",
+  "version": "0.1.21",
   "private": true,
   "homepage": "https://nobus.github.io/weaver",
   "devDependencies": {
