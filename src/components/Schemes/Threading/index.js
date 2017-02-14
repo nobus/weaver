@@ -26,6 +26,12 @@ class Threading extends Component {
       </div>
     );
   }
+
+  shouldComponentUpdate(nextProps, nextState) {
+    return (nextProps.diff.threadings || nextProps.diff.settings)
+      ? true
+      : false;
+  }
 }
 
 export default Threading;

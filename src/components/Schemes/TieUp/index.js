@@ -34,6 +34,12 @@ class TieUp extends Component {
       </div>
     );
   }
+
+  shouldComponentUpdate(nextProps, nextState) {
+    return (nextProps.diff.tieUp || nextProps.diff.settings)
+      ? true
+      : false;
+  }
 }
 
 export default TieUp;

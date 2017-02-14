@@ -26,6 +26,12 @@ class Treadling extends Component {
       </div>
     );
   }
+
+  shouldComponentUpdate(nextProps, nextState) {
+    return (nextProps.diff.treadlings || nextProps.diff.settings)
+      ? true
+      : false;
+  }
 }
 
 export default Treadling;

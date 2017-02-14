@@ -58,12 +58,14 @@ class Scheme4 extends Component {
               <TieUp
                 currentState={switcher4.tieUp}
                 settingsState={switcher4.settings}
+                diff={switcher4.diff}
                 onClick={(row, col) => dispatch(tieUpOn(row, col))}
                 offClick={(row, col) => dispatch(tieUpOff(row, col))}
               />
               <Treadling
                 treadlingsState={switcher4.treadlings}
                 settingsState={switcher4.settings}
+                diff={switcher4.diff}
                 onClick={(row, col) => dispatch(treadlingOn(row, col))}
                 offClick={(row, col) => dispatch(treadlingOff(row, col))}
               />
@@ -79,6 +81,7 @@ class Scheme4 extends Component {
               <Threading
                 threadingsState={switcher4.threadings}
                 settingsState={switcher4.settings}
+                diff={switcher4.diff}
                 onClick={(row, col) => dispatch(threadingOn(row, col))}
                 offClick={(row, col) => dispatch(threadingOff(row, col))}
               />
